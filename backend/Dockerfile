@@ -4,7 +4,7 @@ FROM maven:3.8.7-eclipse-temurin-17 AS builder
 WORKDIR /app
 
 # Copy pom.xml and download dependencies (to improve caching)
-COPY pom.xml ./
+COPY pom.xml
 RUN mvn dependency:go-offline
 
 # Copy the entire project
