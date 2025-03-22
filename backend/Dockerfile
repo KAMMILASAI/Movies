@@ -3,9 +3,12 @@ FROM maven:3.8.7-eclipse-temurin-17 AS builder
 
 WORKDIR /app
 
-# Copy the POM file and dependency files first (to leverage Docker caching)
+# Copy pom.xml and download dependencies (to improve caching)
 COPY pom.xml ./
-COPY src ./src
+RUN mvn dependency:go-offline
+
+# Copy the entire project
+COPY . .
 
 # Build the application
 RUN mvn clean package -DskipTests
