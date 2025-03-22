@@ -3,8 +3,9 @@ FROM maven:3.8.7-eclipse-temurin-17 AS builder
 
 WORKDIR /app
 
-# Copy the project files
-COPY . .
+# Copy the POM file and dependency files first (to leverage Docker caching)
+COPY pom.xml ./
+COPY src ./src
 
 # Build the application
 RUN mvn clean package -DskipTests
