@@ -1,24 +1,14 @@
-# Use official Maven image to build the application
-FROM maven:3.9.5-eclipse-temurin-21 AS builder
+# Use an official OpenJDK runtime as a parent image
+FROM openjdk:21-jdk-slim
 
-# Set working directory inside the container
+# Set the working directory
 WORKDIR /app
 
-# Copy necessary files and build the application
-COPY pom.xml .
-RUN mvn dependency:go-offline -B
-COPY . .
-RUN mvn clean package -DskipTests
+# Copy the JAR file into the container
+COPY target/Movies-0.0.1-SNAPSHOT.jar app.jar
 
-# Use a lightweight JDK image to run the built JAR
-FROM eclipse-temurin:21-jdk
-WORKDIR /app
-
-# Copy the built JAR file
-COPY --from=builder /app/target/Movies-0.0.1-SNAPSHOT.jar app.jar
-
-# Expose the application's port
+# Expose the port your app runs on
 EXPOSE 8080
 
 # Run the application
-CMD ["java", "-jar", "app.jar"]
+ENTRYPOINT ["java", "-jar", "app.jar"]
