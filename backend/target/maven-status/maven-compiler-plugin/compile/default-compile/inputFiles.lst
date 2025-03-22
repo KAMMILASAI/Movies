@@ -1,0 +1,13 @@
+D:\Work\Full Stack\Movies\backend\src\main\java\com\sai\Movies\Config\CloudinaryConfig.java
+D:\Work\Full Stack\Movies\backend\src\main\java\com\sai\Movies\Config\SecurityConfig.java
+D:\Work\Full Stack\Movies\backend\src\main\java\com\sai\Movies\Controller\MovieController.java
+D:\Work\Full Stack\Movies\backend\src\main\java\com\sai\Movies\Controller\UserController.java
+D:\Work\Full Stack\Movies\backend\src\main\java\com\sai\Movies\DAO\MoviesRepo.java
+D:\Work\Full Stack\Movies\backend\src\main\java\com\sai\Movies\DAO\UserRepository.java
+D:\Work\Full Stack\Movies\backend\src\main\java\com\sai\Movies\Entity\ErrorExceptionHandler.java
+D:\Work\Full Stack\Movies\backend\src\main\java\com\sai\Movies\Entity\ErrorResponse.java
+D:\Work\Full Stack\Movies\backend\src\main\java\com\sai\Movies\Entity\Movies.java
+D:\Work\Full Stack\Movies\backend\src\main\java\com\sai\Movies\Entity\User.java
+D:\Work\Full Stack\Movies\backend\src\main\java\com\sai\Movies\MoviesApplication.java
+D:\Work\Full Stack\Movies\backend\src\main\java\com\sai\Movies\Services\CloudinaryService.java
+D:\Work\Full Stack\Movies\backend\src\main\java\com\sai\Movies\Services\UserService.java

@@ -1,0 +1,15 @@
+com\sai\Movies\Services\UserService.class
+com\sai\Movies\DAO\UserRepository.class
+com\sai\Movies\MoviesApplication.class
+com\sai\Movies\Controller\UserController.class
+com\sai\Movies\Config\CloudinaryConfig.class
+com\sai\Movies\Controller\MovieController.class
+com\sai\Movies\Config\SecurityConfig$2.class
+com\sai\Movies\DAO\MoviesRepo.class
+com\sai\Movies\Entity\User.class
+com\sai\Movies\Entity\Movies.class
+com\sai\Movies\Entity\ErrorExceptionHandler.class
+com\sai\Movies\Entity\ErrorResponse.class
+com\sai\Movies\Config\SecurityConfig.class
+com\sai\Movies\Config\SecurityConfig$1.class
+com\sai\Movies\Services\CloudinaryService.class
