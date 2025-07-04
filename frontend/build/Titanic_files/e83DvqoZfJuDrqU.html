@@ -1,0 +1,1514 @@
+<!DOCTYPE html>
+<!-- saved from url=(0074)https://images-na.ssl-images-amazon.com/images/S/sash/e83DvqoZfJuDrqU.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+        <!-- APE SafeFrame v1.50.d327519 -- 2022-02-22T20:30:21+0000 -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta http-equiv="Cache-Control" content="public">
+        <meta name="ROBOTS" content="NOINDEX">
+        <meta name="ROBOTS" content="NOFOLLOW">
+        <meta name="ROBOTS" content="NOARCHIVE">
+        <meta name="ROBOTS" content="NOSNIPPET">
+        <meta name="ROBOTS" content="NOODP ">
+        <title></title>
+        <style type="text/css">
+            body {
+                margin: 0px;
+                padding: 0px;
+                background-color: transparent;
+            }
+        </style>
+    </head>
+    <body marginwidth="0" marginheight="0">
+        <script>
+            const urlParams = new URLSearchParams(window.location.search);
+            const isInPaetsWeblab = urlParams.has('paets-weblab');
+            !function i(o, s, c) {
+                function d(t, e) {
+                    if (!s[t]) {
+                        if (!o[t]) {
+                            var n = "function" == typeof require && require;
+                            if (!e && n)
+                                return n(t, !0);
+                            if (l)
+                                return l(t, !0);
+                            var a = new Error("Cannot find module '" + t + "'");
+                            throw a.code = "MODULE_NOT_FOUND",
+                            a
+                        }
+                        var r = s[t] = {
+                            exports: {}
+                        };
+                        o[t][0].call(r.exports, function(e) {
+                            return d(o[t][1][e] || e)
+                        }, r, r.exports, i, o, s, c)
+                    }
+                    return s[t].exports
+                }
+                for (var l = "function" == typeof require && require, e = 0; e < c.length; e++)
+                    d(c[e]);
+                return d
+            }({
+                1: [function(e, t, n) {
+                    var a = e("./lib/replace")
+                      , r = e("./lib/getSlotPlaceholder").getSlotPlaceholder
+                      , i = e("./lib/getSlotPlaceholder").getClickTrackingParamWithSlotId;
+                    t.exports.replace = a,
+                    t.exports.getSlotPlaceholder = r,
+                    t.exports.getClickTrackingParamWithSlotId = i
+                }
+                , {
+                    "./lib/getSlotPlaceholder": 2,
+                    "./lib/replace": 4
+                }],
+                2: [function(e, t, n) {
+                    var a = e("./globals")
+                      , r = "data-val";
+                    function i(e) {
+                        if ("string" != typeof e || "" === e)
+                            return "";
+                        var t = a.getDocument().getElementById("ape_" + e + "_placement_ClickTracking");
+                        if (!(t && t.hasAttribute && "function" == typeof t.hasAttribute && t.hasAttribute(r) && t.getAttribute && "function" == typeof t.getAttribute))
+                            return "";
+                        var n = t.getAttribute(r);
+                        return "string" != typeof n ? "" : n
+                    }
+                    t.exports.getSlotPlaceholder = function(e, t, n) {
+                        return i([e, n, t].join("_"))
+                    }
+                    ,
+                    t.exports.getClickTrackingParamWithSlotId = i
+                }
+                , {
+                    "./globals": 3
+                }],
+                3: [function(e, t, n) {
+                    t.exports.getDocument = function() {
+                        return document
+                    }
+                }
+                , {}],
+                4: [function(e, t, n) {
+                    var u = new RegExp(/((&#[0-9]{2};)|(&#[0-9]{3};)|(&#[0-9]{4};)|(&[a-z]{2};)|(&[a-z]{3};)|(&[a-z]{4};)|(&[a-z]{5};)|(&[a-z]{6};)|(&[a-z]{7};)|(%[a-fA-F0-9]{2})|(\W))pd_rd_plhdr(=|%3D)t((&#[0-9]{2};)|(&#[0-9]{3};)|(&#[0-9]{4};)|(&[a-z]{2};)|(&[a-z]{3};)|(&[a-z]{4};)|(&[a-z]{5};)|(&[a-z]{6};)|(&[a-z]{7};)|(%[a-fA-F0-9]{2})|(\W))/)
+                      , p = "$1"
+                      , f = "$14";
+                    t.exports = function(e, t) {
+                        var n = t
+                          , a = e;
+                        if ("string" != typeof e || "&pd_rd_plhdr=t" === e || "" === e.trim())
+                            return n;
+                        (a = a.replace(/&amp;/g, "&")).startsWith("&") && (a = a.replace(/^&+/, "")),
+                        a.endsWith("&") && (a = a.replace(/&+$/, ""));
+                        try {
+                            var r, i = 0;
+                            do {
+                                if (i++,
+                                !(r = n.match(u)))
+                                    break;
+                                var o = r[1]
+                                  , s = r[14]
+                                  , c = r[13]
+                                  , d = o.startsWith("&") && o.endsWith(";") || s.startsWith("&") && s.endsWith(";")
+                                  , l = o.startsWith("%") && s.startsWith("%") && "%3D" === c;
+                                n = d ? n.replace(u, p + a.replace(/&/g, "&amp;") + f) : l ? n.replace(u, p + encodeURIComponent(a) + f) : n.replace(u, p + a + f)
+                            } while (r && i < 10)
+                        } catch (e) {
+                            return t
+                        }
+                        return n
+                    }
+                }
+                , {}],
+                5: [function(e, t, n) {
+                    var a = e("./lib/addJSONQueryParamToURL").addJSONQueryParamToURL;
+                    t.exports.addJSONQueryParamToURL = a
+                }
+                , {
+                    "./lib/addJSONQueryParamToURL": 6
+                }],
+                6: [function(e, t, n) {
+                    var s = e("./globals")
+                      , p = "{}"
+                      , f = "?"
+                      , m = "&"
+                      , E = "=";
+                    function g(e, t) {
+                        var n = {};
+                        for (var a in e)
+                            n[a] = e[a];
+                        for (var r in t)
+                            n[r] = t[r];
+                        return n
+                    }
+                    t.exports.addJSONQueryParamToURL = function(t, n, a) {
+                        if ("string" != typeof t || "" === t)
+                            throw new Error("Invalid url input to addJSONQueryParamToURL: " + JSON.stringify({
+                                url: t
+                            }));
+                        if ("string" != typeof n || "" === n)
+                            throw new Error("Invalid queryParamKey input to addJSONQueryParamToURL: " + JSON.stringify({
+                                queryParamKey: n
+                            }));
+                        if ("object" != typeof a)
+                            throw new Error("Invalid queryParamValueObject input to addJSONQueryParamToURL: " + JSON.stringify({
+                                queryParamValueObject: a
+                            }));
+                        try {
+                            var e = new (s.getURLInterface())(t)
+                              , r = e.searchParams.get(n) ? e.searchParams.get(n) : p
+                              , i = JSON.parse(r);
+                            if ("object" != typeof i)
+                                throw new Error("Existing query param value was not an object: " + JSON.stringify({
+                                    existingJSONObject: i
+                                }));
+                            var o = g(i, a);
+                            return e.searchParams.set(n, JSON.stringify(o)),
+                            e.toString()
+                        } catch (e) {
+                            return function(e, t, n) {
+                                var a, r = e.indexOf(f), i = {};
+                                if (0 < r) {
+                                    a = e.substring(0, r);
+                                    var o = decodeURIComponent(e.substring(r + 1));
+                                    o.split(m).forEach(function(e) {
+                                        if (e) {
+                                            var t = e.split(E);
+                                            i[t[0]] = t[1]
+                                        }
+                                    });
+                                    var s = i[t] ? i[t] : p
+                                      , c = JSON.parse(s);
+                                    if ("object" != typeof c)
+                                        throw new Error("Existing query param value was not an object: " + JSON.stringify({
+                                            existingJSONObject: c
+                                        }));
+                                    var d = g(c, n);
+                                    i[t] = JSON.stringify(d)
+                                } else
+                                    a = e,
+                                    i[t] = JSON.stringify(n);
+                                var l = [];
+                                for (var u in i)
+                                    l.push(encodeURIComponent(u) + E + encodeURIComponent(i[u]));
+                                return a + f + l.join(m)
+                            }(t, n, a)
+                        }
+                    }
+                }
+                , {
+                    "./globals": 7
+                }],
+                7: [function(e, t, n) {
+                    t.exports.getURLInterface = function() {
+                        return URL
+                    }
+                }
+                , {}],
+                8: [function(e, t, n) {
+                    var a = e("../components/sfCounters")
+                      , r = e("./messenger/sfMsgHandler")
+                      , i = r.messenger
+                      , o = a.IMPRESSION_COUNTERS.LEGACY_IMPRESSION_COUNTER
+                      , s = !1;
+                    t.exports.fireImpression = function(e) {
+                        i.fireImpressionPixel(e.measurementMethod, e.isNoInventory)
+                    }
+                    ,
+                    t.exports.fireMetricsForLegacyImpression = function(e) {
+                        var t = i.options.adCreativeMetaData.adProgramId ? i.options.adCreativeMetaData.adProgramId : "unknown"
+                          , n = r.prepareCreativeTemplateNameForTagging(i.options.adCreativeMetaData.adCreativeTemplateName);
+                        s || (s = !0,
+                        i.client.countMetric(o, 1, !1),
+                        i.client.countMetric(o, 1, !0),
+                        i.client.countMetric(o + ":program:" + t, 1, !0),
+                        i.client.countMetric(o + ":template:" + n, 1, !0))
+                    }
+                }
+                , {
+                    "../components/sfCounters": 15,
+                    "./messenger/sfMsgHandler": 11
+                }],
+                9: [function(e, t, n) {
+                    var a = e("../../components/util")
+                      , l = e("../../components/sfCounters").BTR_COUNTERS
+                      , u = e("./measurementMethods").MEASUREMENT_METHODS
+                      , p = ["ape_impression", "ape_ni_impression", "ape_measurability", "ape_viewability_amzn", "ape_viewability_iab", "ape_viewability_groupm", "ape_ni_viewability_amzn", "ape_ni_viewability_iab", "ape_ni_viewability_groupm"];
+                    t.exports.evaluateImpressionMeasurementMethod = function(c, d) {
+                        var e = function() {
+                            for (var e = document.getElementsByTagName("img"), t = [], n = 0; n < e.length; n++)
+                                -1 === p.indexOf(e[n].id) && t.push(e[n]);
+                            var a = 0
+                              , r = 0
+                              , i = 0
+                              , o = u.COUNT_ON_DOWNLOAD_CLIENT;
+                            for (n = 0; n < t.length; n++) {
+                                var s = t[n];
+                                s.complete && 0 < s.naturalHeight && 0 < s.naturalWidth ? 1 === s.naturalHeight && 1 === s.naturalWidth ? r++ : (1 < s.naturalHeight || 1 < s.naturalWidth) && i++ : a++
+                            }
+                            0 === t.length ? (c.countMetric(l.NO_IMAGES, 1, !1),
+                            c.countMetric(l.NO_IMAGES, 1, !0)) : 0 < a ? (c.countMetric(l.ERROR, 1, !1),
+                            c.countMetric(l.ERROR, 1, !0)) : 0 === i && 0 < r ? (c.countMetric(l.PIXELS, 1, !1),
+                            c.countMetric(l.PIXELS, 1, !0)) : 0 < i && (c.countMetric(l.LOADED, 1, !1),
+                            c.countMetric(l.LOADED, 1, !0),
+                            o = u.BEGIN_TO_RENDER_CLIENT),
+                            d(o)
+                        };
+                        "complete" === document.readyState ? e() : a.addWindowListener("load", function() {
+                            e()
+                        })
+                    }
+                }
+                , {
+                    "../../components/sfCounters": 15,
+                    "../../components/util": 17,
+                    "./measurementMethods": 10
+                }],
+                10: [function(e, t, n) {
+                    t.exports.MEASUREMENT_METHODS = {
+                        BEGIN_TO_RENDER_CLIENT: "btr_client",
+                        COUNT_ON_DOWNLOAD_CLIENT: "cod_client"
+                    }
+                }
+                , {}],
+                11: [function(i, e, t) {
+                    function r(e, t) {
+                        "undefined" != typeof console && console.error && console.error(e, t)
+                    }
+                    function S(e) {
+                        return e ? e.toLowerCase().replace(/[^0-9a-z]/g, "") : "unknown"
+                    }
+                    e.exports.messenger = new function(e, t, n) {
+                        var g = this
+                          , d = i("@amzn/apejs-url-query-params")
+                          , v = i("../../components/sfCounters")
+                          , R = i("../../components/sfEvents")
+                          , l = i("./measurementMethods").MEASUREMENT_METHODS
+                          , u = v.AD_LOAD_COUNTERS
+                          , p = v.IMPRESSION_COUNTERS.GLOBAL_IMPRESSION_FIRED_COUNTER
+                          , f = v.BTR_COUNTERS
+                          , m = R.AD_LOAD_EVENTS
+                          , E = i("../../components/pixel")
+                          , T = {};
+                        this.client = e || {},
+                        this.options = t || {},
+                        this.msgListeners = n || {},
+                        this.tagRenderFlow = function() {
+                            if (g.options && g.options.adCreativeMetaData && g.options.adCreativeMetaData.adProgramId && g.options.adCreativeMetaData.adCreativeId) {
+                                var e = S(g.options.adCreativeMetaData.adCreativeTemplateName);
+                                g.client.addCsmTag("adrender"),
+                                g.client.addCsmTag("adrender:safeframe"),
+                                g.client.addCsmTag("adrender", "creativeid:" + g.options.adCreativeMetaData.adCreativeId),
+                                g.client.addCsmTag("adrender", "programid:" + g.options.adCreativeMetaData.adProgramId),
+                                g.client.addCsmTag("adrender", "creativetemplatename:" + e),
+                                g.sendMessage("addCsaEntity", {
+                                    adrender: "true",
+                                    creativeId: g.options.adCreativeMetaData.adCreativeId.toString(),
+                                    adProgramId: g.options.adCreativeMetaData.adProgramId.toString(),
+                                    creativeTemplateName: e,
+                                    isLightAds: "false"
+                                }),
+                                void 0 !== g.options.isCardsFlow && g.sendMessage("addCsaEntity", {
+                                    isCardsFlow: g.options.isCardsFlow.toString()
+                                })
+                            } else
+                                g.client.addCsmTag("noadrender"),
+                                g.sendMessage("addCsaEntity", {
+                                    adrender: "false"
+                                })
+                        }
+                        ,
+                        this.produceClientAPIs = function(e) {
+                            function s(e, t, n, a) {
+                                return function() {
+                                    try {
+                                        return n && (g.sendMessage("logAPIInvocation", {
+                                            apiName: t,
+                                            apiParams: arguments
+                                        }),
+                                        g.sendMessage("logCsaEvent", {
+                                            metricName: R.MESSENGER_EVENTS.API + t
+                                        })),
+                                        e.apply(this, arguments)
+                                    } catch (e) {
+                                        return "function" == typeof a && a("API Call Failed", e),
+                                        null
+                                    }
+                                }
+                            }
+                            g.client = function e(t, n) {
+                                var a = {};
+                                for (var r in t)
+                                    if (t.hasOwnProperty(r)) {
+                                        var i = t[r]
+                                          , o = n ? n + "." + r : r;
+                                        "function" == typeof i ? a[r] = new s(i,o) : i.hasOwnProperty("apiFunc") ? a[r] = new s(i.apiFunc,o,i.logInvocation) : "object" == typeof i && (a[r] = e(i, o))
+                                    }
+                                return a
+                            }(e, "")
+                        }
+                        ,
+                        this.sendMessage = function(e, t) {
+                            if (g.options !== {}) {
+                                var n = {
+                                    command: e,
+                                    arid: g.options.arid,
+                                    data: t || {}
+                                };
+                                try {
+                                    parent.postMessage(JSON.stringify(n), g.options.hostDomain)
+                                } catch (e) {
+                                    r("Post Message unsupported ", e)
+                                }
+                            }
+                        }
+                        ,
+                        this.receiveMessage = function(t) {
+                            if (g.options !== {} && g.client !== {}) {
+                                var e;
+                                try {
+                                    if (e = JSON.parse(t.data),
+                                    t.origin !== g.options.hostDomain || "object" != typeof e.data)
+                                        throw "Invalid Message"
+                                } catch (e) {
+                                    var n = "Received Error: " + t.data;
+                                    return void g.client.logError(n, e)
+                                }
+                                try {
+                                    g.options.debug && "undefined" != typeof console && console.log("SF Message received ", t);
+                                    for (var a = e.command ? e.command.split(".") : [], r = g.client[a[0]], i = 1; i < a.length && r; i++)
+                                        r = r[a[i]];
+                                    if ("customMessage" === e.command) {
+                                        var o = e.data.key
+                                          , s = e.data.data;
+                                        if ("function" == typeof g.msgListeners[o])
+                                            try {
+                                                g.msgListeners[o](s)
+                                            } catch (e) {
+                                                g.client.logError("Custom Message Listener Error", e)
+                                            }
+                                    } else
+                                        r && r(e.data)
+                                } catch (e) {
+                                    return void g.client.logError("Error with " + JSON.parse(t.data).command, e)
+                                }
+                            }
+                        }
+                        ;
+                        var I = function(e, t, n) {
+                            return e + t + JSON.stringify(n)
+                        }
+                          , M = function(e) {
+                            return "Image" === e || "Image - mobile O&O" === e
+                        }
+                          , a = !1;
+                        this.fireImageLoaded = function(e) {
+                            if (!a && M(e)) {
+                                var t = document.getElementsByClassName("ad-background-image");
+                                if ((t = t && t[0]) && "img" === t.tagName.toLowerCase())
+                                    if (t.complete)
+                                        g.client.countMetric("imageLoaded", 1, !0),
+                                        g.client.countMetric("imageLoaded:adid:" + g.options.adCreativeMetaData.adId, 1, !0),
+                                        a = !0;
+                                    else {
+                                        var n = t.onload;
+                                        t.onload = function() {
+                                            n && n(),
+                                            g.client.countMetric("imageLoaded", 1, !0),
+                                            g.client.countMetric("imageLoaded:adid:" + g.options.adCreativeMetaData.adId, 1, !0),
+                                            a = !0
+                                        }
+                                    }
+                            }
+                        }
+                        ,
+                        this.fireImpressionPixel = function(measurementMethod, isNoDelivery) {
+                            /**
+                             * For now, if we find the aesBtrPixelUrl is populated, fire impression and BTR pixels separately.
+                             * aesBtrPixelUrl is set in IASSM safeframe.js only when in the weblab IMDB_ADS_PAETS_PIXEL_MIGRATION_1126685
+                             *
+                             * Otherwise, default to just firing the impression pixel
+                             *
+                             * Adding more functions seems to break the Safeframe logic (for unknown reasons), so for now
+                             * we just have two similar logic paths that represent in and out of the weblab cases
+                             */
+                            if (isInPaetsWeblab && g.options && g.options !== {} && 'string' === typeof g.options.aesBtrPixelUrl && '' !== g.options.aesBtrPixelUrl) {
+                                if (g.options !== {} && g.client !== {})
+                                    if (isNoDelivery) {
+                                        var n = I(g.options.aaxInstrPixelUrl, "nii/", {
+                                            ni: !0
+                                        });
+                                        E.firePixel(g.client, n, "ape_ni_impression", u.UNSERVED_IMP, m.UNSERVED_IMP)
+                                    } else {
+                                        var btrPixelUrlWithBtrValue, r = g.options.adCreativeMetaData.adProgramId ? g.options.adCreativeMetaData.adProgramId : "unknown", i = g.options.adCreativeMetaData.adCreativeTemplateName, o = S(i), s = g.options.adCreativeMetaData.adId, c = !1;
+                                        try {
+                                            /** Similar injection within IASSM: https://code.amazon.com/packages/IMDbAdvertisingServiceStaticMedia/blobs/mainline/--/src/js/ads-btr-utils.js#L66 */
+                                            const aaxMacro = '${AAX_PAYLOAD}';
+                                            const btrParamValue = `{"measurementMethod":"${measurementMethod}"}`;
+                                            /** If measurementMethod is populated, insert the value of measurementMethod into the btr pixel */
+                                            "string" == typeof measurementMethod && "" !== measurementMethod ?
+                                                (btrPixelUrlWithBtrValue = g.options.aesBtrPixelUrl.replace(aaxMacro, btrParamValue)) :
+                                                btrPixelUrlWithBtrValue = g.options.aesBtrPixelUrl
+                                        } catch (e) {
+                                            g.client.logError("Unable to add measurementMethod to btr URL", measurementMethod),
+                                                btrPixelUrlWithBtrValue = g.options.aesBtrPixelUrl
+                                        }
+                                        /** Fire the unmodified impression pixel and log metrics */
+                                        E.firePixel(g.client, g.options.aaxImpPixelUrl, "ape_impression", u.IMP, m.IMP) && (g.client.countMetric(p, 1, !0),
+                                            g.client.countMetric(p + ":program:" + r, 1, !0),
+                                            g.client.countMetric(p + ":template:" + i, 1, !0),
+                                        c && (g.client.countMetric(f.IMPRESSION, 1, !1),
+                                            g.client.countMetric(f.IMPRESSION, 1, !0),
+                                            g.client.countMetric(f.IMPRESSION + ":program:" + r, 1, !0),
+                                            g.client.countMetric(f.IMPRESSION + ":template:" + i, 1, !0)),
+                                        M(o) && g.client.countMetric(p + ":adid:" + s, 1, !0)),
+                                        /** Fire the BTR pixel */
+                                        E.firePixel(g.client, btrPixelUrlWithBtrValue, "ape_btr", u.IMP, m.IMP)
+                                    }
+                            } else {
+                                if (g.options !== {} && g.client !== {}) {
+                                    if (isNoDelivery) {
+                                        var n = I(g.options.aaxInstrPixelUrl, "nii/", {
+                                            ni: !0
+                                        });
+                                        E.firePixel(g.client, n, "ape_ni_impression", u.UNSERVED_IMP, m.UNSERVED_IMP)
+                                    } else {
+                                        var impPixelUrl,
+                                            r = g.options.adCreativeMetaData.adProgramId ? g.options.adCreativeMetaData.adProgramId : "unknown",
+                                            i = g.options.adCreativeMetaData.adCreativeTemplateName, o = S(i),
+                                            s = g.options.adCreativeMetaData.adId, c = !1;
+                                        try {
+                                            "string" == typeof measurementMethod && "" !== measurementMethod ? (impPixelUrl = d.addJSONQueryParamToURL(g.options.aaxImpPixelUrl, "pj", {
+                                                measurementMethod: measurementMethod
+                                            }),
+                                                c = measurementMethod === l.BEGIN_TO_RENDER_CLIENT) : impPixelUrl = g.options.aaxImpPixelUrl
+                                        } catch (e) {
+                                            g.client.logError("Unable to add pj to impression URL", measurementMethod),
+                                                impPixelUrl = g.options.aaxImpPixelUrl
+                                        }
+                                        E.firePixel(g.client, impPixelUrl, "ape_impression", u.IMP, m.IMP) && (g.client.countMetric(p, 1, !0),
+                                            g.client.countMetric(p + ":program:" + r, 1, !0),
+                                            g.client.countMetric(p + ":template:" + o, 1, !0),
+                                        c && (g.client.countMetric(f.IMPRESSION, 1, !1),
+                                            g.client.countMetric(f.IMPRESSION, 1, !0),
+                                            g.client.countMetric(f.IMPRESSION + ":program:" + r, 1, !0),
+                                            g.client.countMetric(f.IMPRESSION + ":template:" + o, 1, !0)),
+                                        M(i) && g.client.countMetric(p + ":adid:" + s, 1, !0))
+                                    }
+                                }
+                            }
+                        }
+                        ,
+                        this.fireMeasurabilityPixel = function(e) {
+                            // if (g.options !== {} && g.client !== {} && g.options.aaxInstrPixelUrl) {
+                            //     var t = "ape_measurability";
+                            //     if (!T[t]) {
+                            //         var n = {};
+                            //         n.atf = e.atf;
+                            //         var a = I(g.options.aaxInstrPixelUrl, "atf/", n);
+                            //         E.firePixel(g.client, a, t, u.MEASURABILITY, m.MEASURABILITY),
+                            //         T[t] = !0
+                            //     }
+                            // }
+                        }
+                        ,
+                        this.fireViewablePixels = function(o, s, e, c) {
+                            if (g.options !== {} && g.client !== {} && g.options.aaxInstrPixelUrl && e) {
+                                for (var t = function(e) {
+                                    var t, n, a = e.p, r = e.t, i = e.def;
+                                    !T[i].viewed && (n = a,
+                                    (t = o) && (n <= 100 * t && 0 !== n || n < 100 * t && 0 === n)) ? T[i].timeout || (T[i].timeout = setTimeout(function() {
+                                        T[i].viewed = !0,
+                                        function(e) {
+                                            s.v = e,
+                                            s.ptv = void 0 !== g.options.aPageStart ? (Date.now() - g.options.aPageStart) / 1e3 : 0,
+                                            s.ttv = void 0 !== g.options.adStartTime ? (Date.now() - g.options.adStartTime) / 1e3 : 0,
+                                            c && (s.niv = !0);
+                                            var t, n = {};
+                                            n.viewableInfo = s,
+                                            n.aaxInstrPixelUrl = g.options.aaxInstrPixelUrl,
+                                            n.viewablePercentage = o,
+                                            c ? (t = I(g.options.aaxInstrPixelUrl, "niv/", s),
+                                            E.firePixel(g.client, t, "ape_ni_viewability_" + e.def, u.UNSERVED_VIEWABILITY, m.UNSERVED_VIEWABILITY, e.def, n)) : (t = I(g.options.aaxInstrPixelUrl, "v/", s),
+                                            E.firePixel(g.client, t, "ape_viewability_" + e.def, u.VIEWABILITY, m.VIEWABILITY, e.def, n))
+                                        }(e)
+                                    }, 1e3 * r)) : T[i].timeout && (clearTimeout(T[i].timeout),
+                                    T[i].timeout = null)
+                                }, n = 0; n < e.length; n++) {
+                                    var a = e[n].def;
+                                    a && (T[a] = T[a] || {},
+                                    T[a].viewed = void 0 !== T[a].viewed && T[a].viewed,
+                                    T[a].timeout = void 0 === T[a].timeout ? null : T[a].timeout)
+                                }
+                                for (n = 0; n < e.length; n++)
+                                    t(e[n])
+                            }
+                        }
+                        ,
+                        this.handleNoAdContent = function() {
+                            g.options.isNoInventory = !0,
+                            g.tagRenderFlow(),
+                            g.sendMessage("startPixelTracking", {
+                                isNoInventory: g.options.isNoInventory
+                            })
+                        }
+                        ;
+                        var _ = function(e, t, n, a, r, i) {
+                            window[n] = t,
+                            window[r] = a,
+                            i(["<scr", "ipt type='text/javascript', src='", e, "', onerror='", r + "()", "'></scr", "ipt>"].join(""))
+                        };
+                        this.createXspRequest = function(e, n, a, t, r) {
+                            var i, o, s = v.AD_FETCH_COUNTERS, c = R.AD_FETCH_EVENTS, d = g.client.handleFallbackBehavior, l = g.client.countMetric, u = g.client.logCsaEvent, p = g.client.logError, f = g.client.sendAdBarTrace;
+                            l(s.REQUEST_START, 1),
+                            u(c.REQUEST_START);
+                            try {
+                                var m = "aax_xsp_render_ad"
+                                  , E = (i = m,
+                                -1 === (o = e.replace(/getAd/, "getAdj")).indexOf("?") ? o + "?callback=" + i : o + "&callback=" + i);
+                                f("aaxCall", {
+                                    jsonpUrl: E,
+                                    XSPCallSetupComplete: !0
+                                }),
+                                _(E, function(e) {
+                                    var t = {
+                                        callBackReceived: !0
+                                    };
+                                    if (t.errFallback = d.name,
+                                    e && 0 !== Object.keys(e).length) {
+                                        switch (t.adContent = e,
+                                        t.status = e.status,
+                                        e.status) {
+                                        case "punt":
+                                            l(s.PUNT_RETURNED, 1),
+                                            u(c.PUNT_RETURNED),
+                                            n.aaxInstrPixelUrl = e.instrPixelURL,
+                                            a(),
+                                            t.aaxReturnedPunt = !0,
+                                            f("aaxCall", t);
+                                            break;
+                                        case "error":
+                                            l(s.ERROR_RETURNED, 1),
+                                            u(c.ERROR_RETURNED),
+                                            d(),
+                                            t.aaxReturnedError = !0,
+                                            f("aaxCall", t);
+                                            break;
+                                        default:
+                                            try {
+                                                n.aaxImpPixelUrl = e.impPixelURL,
+                                                n.aaxInstrPixelUrl = e.instrPixelURL,
+                                                n.htmlContent = e.creative,
+                                                n.measurementHtml = e.aaxMeasurementTrackers && e.aaxMeasurementTrackers.html,
+                                                n && n.adFeedbackInfo && (n.adFeedbackInfo.adProgramId = e.programId),
+                                                n && n.adCreativeMetaData && (n.adCreativeMetaData.adProgramId = e.programId,
+                                                n.adCreativeMetaData.adImpressionId = e.impPixelURL,
+                                                n.adCreativeMetaData.adCreativeId = e.creativeId,
+                                                n.adCreativeMetaData.adCreativeTemplateName = e.creativeTemplateName,
+                                                n.adCreativeMetaData.adId = e.adId),
+                                                t.aaxReturnedContent = !0,
+                                                f("aaxCall", t),
+                                                r(n.htmlContent, n.measurementHtml),
+                                                l(s.RENDERED_AD, 1),
+                                                u(c.RENDERED_AD)
+                                            } catch (e) {
+                                                d(),
+                                                l(s.RENDER_ERROR, 1),
+                                                u(c.RENDER_ERROR),
+                                                t.error = "renderError",
+                                                f("aaxCall", t)
+                                            }
+                                        }
+                                        window.adReporterConfig && g.sendMessage("saveAdDetailsForAdReporter", n)
+                                    } else
+                                        l(s.EMPTY_RESPONSE, 1),
+                                        u(c.EMPTY_RESPONSE),
+                                        d(),
+                                        t.error = "emptyAAXResponse",
+                                        f("aaxCall", t)
+                                }, m, function() {
+                                    l(s.HTTP_ERROR, 1),
+                                    u(c.HTTP_ERROR),
+                                    p("Failed to Fetch Ad From AAX."),
+                                    f("aaxCall", {
+                                        error: "httpError"
+                                    }),
+                                    d()
+                                }, "fetch_error_handler", t)
+                            } catch (e) {
+                                l(s.EXCEPTION, 1),
+                                u(c.EXCEPTION),
+                                p("Failed to create JSONP call."),
+                                f("aaxCall", {
+                                    error: "failedToCreateJSONP"
+                                }),
+                                d(),
+                                f("aaxCall", {
+                                    JSONPCreationException: {
+                                        exception: e
+                                    }
+                                })
+                            }
+                        }
+                        ,
+                        this.createXGetAdRequest = function(e, t, n, a) {
+                            _(e, function(e) {
+                                e && void 0 !== e.html && e.html ? a(e.html) : t()
+                            }, "aax_render_ad", t, "fallback", n)
+                        }
+                    }
+                    ,
+                    e.exports.localErrorLog = r,
+                    e.exports.isSecure = function(e) {
+                        return /^https/.test(e)
+                    }
+                    ,
+                    e.exports.replaceWithSecure = function(e) {
+                        return e ? e.replace(/^http:/, "https:") : e
+                    }
+                    ,
+                    e.exports.isOnAmazon = function(e) {
+                        return /\.amazon\.(com?\.)?[a-z]{2,4}:?/i.test(e)
+                    }
+                    ,
+                    e.exports.isOnAllowlistedPage = function(e) {
+                        var t = ["ca", "mx", "br", "de", "uk", "fr", "it", "es", "in", "ae", "sa", "nl", "tr", "se", "jp", "au", "cn"].join("|");
+                        return new RegExp("\\.amazon(\\.com?)?(\\.(" + t + "))?(:(\\d){1,6})?(/.*)?$","i").test(e) || /\.(imdb|boxofficemojo|dpreview)\.com(:(\d){1,6})?(\/.*)?$/i.test(e)
+                    }
+                    ,
+                    e.exports.prepareCreativeTemplateNameForTagging = S,
+                    e.exports.handleVideoExperience = function(e, t, n) {
+                        var a = i("../../components/sfCounters").AD_LOAD_COUNTERS
+                          , r = i("../../components/sfEvents").AD_LOAD_EVENTS;
+                        try {
+                            t.client.countMetric(a.RENDER_START, 1),
+                            t.client.logCsaEvent(r.RENDER_START),
+                            e.setupOMVideoPlayer(t.options, n),
+                            t.client.countMetric(a.RENDER_END, 1),
+                            t.client.logCsaEvent(r.RENDER_END)
+                        } catch (e) {
+                            t.client.handleFallbackBehavior()
+                        }
+                    }
+                }
+                , {
+                    "../../components/pixel": 13,
+                    "../../components/sfCounters": 15,
+                    "../../components/sfEvents": 16,
+                    "./measurementMethods": 10,
+                    "@amzn/apejs-url-query-params": 5
+                }],
+                12: [function(K, Z, e) {
+                    window.SFClient = function(a, r) {
+                        var i = K("@amzn/apejs-click-tracking")
+                          , e = K("../components/sfCounters")
+                          , t = K("../components/sfEvents")
+                          , o = K("../components/util")
+                          , n = K("../components/sfAPI")
+                          , s = K("./messenger/sfMsgHandler")
+                          , c = K("./messenger/evaluateImpressionMeasurementMethod").evaluateImpressionMeasurementMethod
+                          , d = K("./clientAPI")
+                          , l = s.messenger
+                          , u = s.localErrorLog
+                          , p = s.isSecure
+                          , f = s.replaceWithSecure
+                          , m = s.isOnAmazon
+                          , E = s.isOnAllowlistedPage
+                          , g = s.handleVideoExperience
+                          , v = l.fireImageLoaded
+                          , R = l.handleNoAdContent
+                          , T = o.decodeBase64
+                          , I = l.createXspRequest
+                          , M = l.createXGetAdRequest
+                          , _ = o.ABP_STATUS
+                          , S = e.AD_LOAD_COUNTERS
+                          , N = t.AD_LOAD_EVENTS
+                          , C = e.GET_QUERY_PARAM_COUNTER;
+                        if (!E(r.referrer))
+                            return null;
+                        var h = a.$sf = n.produce()
+                          , y = {
+                            sendAdBarTrace: function(e, t) {
+                                l.sendMessage("sendAdBarTrace", {
+                                    field: e,
+                                    traceInfo: t
+                                })
+                            },
+                            changeSize: function(e, t) {
+                                l.sendMessage("changeSize", {
+                                    width: e,
+                                    height: t
+                                })
+                            },
+                            collapseSlot: function() {
+                                l.sendMessage("collapseSlot")
+                            },
+                            handleFallbackBehavior: function() {
+                                (l.client.forceFallback || l.client.collapseSlot)()
+                            },
+                            logError: function(e, t, n) {
+                                l.sendMessage("logError", {
+                                    message: e,
+                                    error: t
+                                })
+                            },
+                            logCsaEvent: function(e) {
+                                l.sendMessage("logCsaEvent", {
+                                    metricName: e
+                                })
+                            },
+                            addCsaEntity: function(e) {
+                                l.sendMessage("addEntity", e)
+                            },
+                            sendCsmLatencyMetric: function(e, t) {
+                                l.sendMessage("sendCsmLatencyMetric", {
+                                    metric: e,
+                                    metricMsg: t,
+                                    timestamp: o.now()
+                                })
+                            },
+                            markCsaLatencyMetric: function(e) {
+                                l.sendMessage("markCsaLatencyMetric", {
+                                    metric: e,
+                                    timestamp: o.now()
+                                })
+                            },
+                            countMetric: function(e, t, n) {
+                                l.sendMessage("countMetric", {
+                                    metricMsg: e,
+                                    value: t,
+                                    isGlobal: n
+                                })
+                            },
+                            addCsmTag: function(e, t, n) {
+                                l.sendMessage("addCsmTag", {
+                                    tag: e,
+                                    msg: t,
+                                    isGlobal: n
+                                })
+                            },
+                            fireViewableLatencyMetrics: function() {
+                                l.sendMessage("fireViewableLatencyMetrics", {
+                                    adLoadedTimestamp: o.now()
+                                })
+                            },
+                            customMessage: function(e, t) {
+                                l.sendMessage("customMessage", {
+                                    key: e,
+                                    body: t
+                                })
+                            },
+                            isSupported: function() {
+                                return "function" == typeof parent.postMessage
+                            },
+                            getARID: function() {
+                                return l.options.arid
+                            },
+                            isOnAmazon: function() {
+                                return m(l.options.hostDomain)
+                            },
+                            getPageId: function() {
+                                var e = l.client.getAanParams().match(/\bpid=([^;]+)\b/);
+                                return e ? e[1] : null
+                            },
+                            getDebugInfo: function(e) {
+                                var t = a.aanResponse || (r.aanResponse ? r.aanResponse[l.options.slotName + "adData"] : {})
+                                  , n = {
+                                    arid: l.options.arid,
+                                    slot: l.options.slot,
+                                    slotName: l.options.slotName,
+                                    shazamId: t.shazamId,
+                                    creativeId: t.creativeId || t.cid,
+                                    adId: t.adId || t.aid,
+                                    src: l.options.src,
+                                    iframeHtml: r.body.innerHTML || ""
+                                };
+                                l.client.customMessage(e.key, n)
+                            },
+                            getAanParams: {
+                                apiFunc: function() {
+                                    return l.options.aanParams || ""
+                                },
+                                logInvocation: !0
+                            },
+                            sendAdInfo: function(e) {
+                                e && l.options.adCreativeMetaData && (l.options.adCreativeMetaData.adCreativeDetails = e)
+                            },
+                            registerCustomMessageListener: function(e, t) {
+                                l.msgListeners[e] = t
+                            },
+                            getQueryParam: {
+                                apiFunc: function(e) {
+                                    l.client.countMetric(C + ":" + e, 1);
+                                    var t = "";
+                                    return void 0 !== l.options.queryParams && "string" == typeof e && (0 !== e.indexOf("sf-") && (t = "sf-" + e),
+                                    t = l.options.queryParams[t] || ""),
+                                    t
+                                },
+                                logInvocation: !0
+                            },
+                            getPlacementInfo: {
+                                apiFunc: function() {
+                                    var e = {};
+                                    return e.slot = l.options.slot,
+                                    e.slotName = l.options.slotName,
+                                    e
+                                },
+                                logInvocation: !0
+                            },
+                            executePostCreativeRenderingSteps: function() {
+                                W()
+                            },
+                            fireImpression: d.fireImpression,
+                            fireMetricsForLegacyImpression: d.fireMetricsForLegacyImpression,
+                            updateViewability: function(e) {
+                                if (n.update(e),
+                                l.options.aaxInstrPixelUrl) {
+                                    l.options.isNoInventory || void 0 === e.atf || l.fireMeasurabilityPixel(e);
+                                    var t = h.ext.geom();
+                                    l.fireViewablePixels(t && t.self && t.self.iv, e.payload, e.viewabilityStandards, l.options.isNoInventory)
+                                }
+                            },
+                            loadAdFeedback: function() {
+                                l.sendMessage("loadAdFeedback", l.options.adCreativeMetaData)
+                            },
+                            forceFallback: function() {
+                                B(!0)
+                            },
+                            requestVideoAutoplay: function() {
+                                l.sendMessage("requestVideoAutoplay")
+                            },
+                            releaseVideoAutoplay: function() {
+                                l.sendMessage("releaseVideoAutoplay")
+                            },
+                            haveVideoAutoplayPermission: function() {
+                                l.sendMessage("haveVideoAutoplayPermission")
+                            },
+                            logSafeframeResourceTimingData: function() {
+                                l.sendMessage("logSafeframeResourceTimingData", {
+                                    resourceTimingData: performance.getEntriesByType("resource"),
+                                    navigationStartTime: performance.timing.navigationStart
+                                })
+                            }
+                        };
+                        l.produceClientAPIs(y);
+                        var A = function(t, e, n, a, r) {
+                            var i, o;
+                            try {
+                                o = (i = r || new Error(t,e,n)).message + ": " + i.stack
+                            } catch (e) {
+                                i = null,
+                                o = t
+                            }
+                            return l.client.isSupported() ? l.client.logError(o, i) : u("Error in Safeframe window ", o),
+                            B(),
+                            !0
+                        };
+                        function x() {
+                            a.onerror = A,
+                            a.$sf = h,
+                            a.aaxInstrPixelUrl = l.options.aaxInstrPixelUrl
+                        }
+                        a.onerror = A;
+                        var P = r.open
+                          , D = "function" == typeof P.apply ? function() {
+                            return P.apply(r, arguments)
+                        }
+                        : function() {
+                            return Function.apply.call(P, r, arguments)
+                        }
+                        ;
+                        r.open = function(e, t) {
+                            D(e, t),
+                            x()
+                        }
+                        ,
+                        o.disableCookieAccess();
+                        var O = r.write
+                          , w = "function" == typeof O.apply ? function() {
+                            return O.apply(r, arguments)
+                        }
+                        : function() {
+                            return Function.apply.call(O, r, arguments)
+                        }
+                          , b = !1
+                          , L = !1;
+                        function U(e) {
+                            l.client.countMetric(S.RENDER_START, 1),
+                            l.client.logCsaEvent(N.RENDER_START);
+                            var t = {};
+                            t.readyState = r.readyState,
+                            l.client.sendAdBarTrace("renderHtmlContentStart", t),
+                            "complete" === r.readyState && r.open(),
+                            w(e),
+                            x(),
+                            r.close(),
+                            b = !0,
+                            o.addWindowListener("load", V),
+                            o.addWindowListener("load", l.client.fireViewableLatencyMetrics),
+                            o.addWindowListener("load", k),
+                            setTimeout(W, 0),
+                            l.client.countMetric(S.RENDER_END, 1),
+                            l.client.logCsaEvent(N.RENDER_END),
+                            t.readyState = r.readyState,
+                            l.client.sendAdBarTrace("renderHtmlContentEnd", t)
+                        }
+                        function k() {
+                            l.options.collectSafeframeRTD && performance && performance.getEntriesByType ? l.client.logSafeframeResourceTimingData() : (l.client.countMetric(e.RESOURCE_TIMING_DATA_COUNTERS.DEPENDENCIES_NOT_MET, 1),
+                            l.client.logCsaEvent(t.RESOURCE_TIMING_DATA_EVENTS.DEPENDENCIES_NOT_MET))
+                        }
+                        r.write = U;
+                        var F = !1;
+                        function V() {
+                            F || (F = !0,
+                            l.client.sendCsmLatencyMetric("ld"),
+                            l.client.markCsaLatencyMetric("loaded"))
+                        }
+                        function B(e) {
+                            var t, n, a;
+                            b && !e || (l.options.fallbackStaticAdImgUrl && l.options.fallbackStaticAdClickUrl ? (t = l.options.fallbackStaticAdImgUrl,
+                            n = l.options.fallbackStaticAdClickUrl,
+                            a = l.options.fallbackStaticAdExtraStyle,
+                            w('<a target="_top" href="' + n + '"><img src="' + t + '" ' + (a || "") + "></a>"),
+                            x(),
+                            o.ensureMessageListener(l.receiveMessage),
+                            r.close(),
+                            l.client.loadAdFeedback(),
+                            b = L = !0) : l.client.collapseSlot())
+                        }
+                        function W() {
+                            o.ensureMessageListener(l.receiveMessage);
+                            var e = {};
+                            L ? e.firstInvocation = !1 : (e.firstInvocation = !0,
+                            L = !0,
+                            l.client.loadAdFeedback(),
+                            l.sendMessage("startPixelTrackingForLegacyImpression"),
+                            c(l.client, function(e) {
+                                l.sendMessage("startPixelTracking", {
+                                    measurementMethod: e
+                                })
+                            }),
+                            l.options.adCreativeMetaData && v(l.options.adCreativeMetaData.adCreativeTemplateName),
+                            l.client.countMetric(S.CREATIVE_WRITTEN, 1),
+                            l.client.logCsaEvent(N.CREATIVE_WRITTEN)),
+                            l.client.sendAdBarTrace("doneFunction", e)
+                        }
+                        a.addEventListener ? a.addEventListener("message", l.receiveMessage, !1) : a.attachEvent && a.attachEvent("message", l.receiveMessage);
+                        try {
+                            l.options = JSON.parse(a.name)
+                        } catch (e) {
+                            u("Could not parse name ", e)
+                        }
+                        a.name = "";
+                        var H = a.addEventListener
+                          , z = a.removeEventListener
+                          , j = a.attachEvent
+                          , J = a.detachEvent;
+                        function q(e) {
+                            var t = String(e);
+                            return "message" === (t = t.toLowerCase()) || "onmessage" === t
+                        }
+                        a.addEventListener && (a.addEventListener = function(e, t, n) {
+                            H.call(a, e, t, n)
+                        }
+                        ,
+                        a.removeEventListener = function(e, t, n) {
+                            q(e) || z.call(a, e, t, n)
+                        }
+                        ),
+                        a.attachEvent && (a.attachEvent = function(e, t) {
+                            return j.call(a, e, t)
+                        }
+                        ,
+                        a.detachEvent = function(e, t) {
+                            return !q(e) && J.call(a, e, t)
+                        }
+                        ),
+                        l.client.sendCsmLatencyMetric("be"),
+                        l.client.markCsaLatencyMetric("bodyEnd"),
+                        l.sendMessage("safeFrameReady"),
+                        l.client.countMetric(S.IFRAME_INIT, 1),
+                        l.client.logCsaEvent(N.IFRAME_INIT),
+                        l.options.disableResizeFunc || l.sendMessage("resizeSafeFrameAd"),
+                        l.options.resizePlacementStyle && l.sendMessage("setResizePlacementStyle");
+                        var G = function(e, t) {
+                            if (l.options.isNoInventory = !1,
+                            l.tagRenderFlow(),
+                            !b) {
+                                var n = e;
+                                l.options.clickTracking && (n = i.replace(l.options.clickTracking, n)),
+                                t && t.length && (l.client.countMetric(S.MEASUREMENT_HTML, 1),
+                                l.client.logCsaEvent(N.MEASUREMENT_HTML)),
+                                o.isVideo(l.options.mediaType) ? g(a, l, n) : ("string" == typeof t && (n = n.concat(t)),
+                                U(n))
+                            }
+                        };
+                        a.writeAdHandler = null;
+                        var Y = {};
+                        if (Y.serverSide = l.options.serverSideFetchAd,
+                        "true" !== l.options.abpAcceptable && l.options.enableFallbackForAbpStatuses && -1 < l.options.enableFallbackForAbpStatuses.indexOf(_[l.options.abpStatus]))
+                            B(!0);
+                        else if ("true" === l.options.serverSideFetchAd)
+                            if (l.options.htmlContentEncoded) {
+                                var Q = T(l.options.htmlContentEncoded)
+                                  , X = T(l.options.measurementHtmlEncoded ? l.options.measurementHtmlEncoded : "");
+                                Y.htmlContent = Q,
+                                a.writeAdHandler = function() {
+                                    G(Q, X)
+                                }
+                            } else
+                                R(),
+                                Y.noAdContent = !0;
+                        else {
+                            var $ = p(l.options.hostDomain) ? f(l.options.src) : l.options.src;
+                            (Y.adSource = $) && -1 !== $.indexOf("x/getad") ? (a.writeAdHandler = function() {
+                                M($, B, w, r.write)
+                            }
+                            ,
+                            Y.isXsp = !1) : (a.writeAdHandler = function() {
+                                I($, l.options, R, w, G)
+                            }
+                            ,
+                            Y.isXsp = !0)
+                        }
+                        return l.client.sendAdBarTrace("adRenderFlow", Y),
+                        l.msgListeners.initAdReporter = function(e) {
+                            try {
+                                a.adReporterConfig = e;
+                                var t = r.createElement("script");
+                                t.type = "text/javascript",
+                                t.async = !0,
+                                t.charset = "utf-8",
+                                t.src = e && e.adReporterClientUrl ? e.adReporterClientUrl : "",
+                                (r.getElementsByTagName("head")[0] || r.getElementsByTagName("body")[0]).appendChild(t),
+                                l.sendMessage("saveAdDetailsForAdReporter")
+                            } catch (e) {
+                                u("Error appending adReporterClient script", e)
+                            }
+                        }
+                        ,
+                        Z.exports.done = W,
+                        l.client
+                    }(window, document),
+                    "function" == typeof window.writeAdHandler && window.writeAdHandler()
+                }
+                , {
+                    "../components/sfAPI": 14,
+                    "../components/sfCounters": 15,
+                    "../components/sfEvents": 16,
+                    "../components/util": 17,
+                    "./clientAPI": 8,
+                    "./messenger/evaluateImpressionMeasurementMethod": 9,
+                    "./messenger/sfMsgHandler": 11,
+                    "@amzn/apejs-click-tracking": 1
+                }],
+                13: [function(e, t, n) {
+                    var f = function(e, t, n) {
+                        var a = e + t;
+                        return n && (a += "_" + n),
+                        a
+                    };
+                    t.exports.firePixel = function(t, n, e, a, r, i, o) {
+                        if (!t || !n || "string" != typeof n || n.length <= 0 || !e || "string" != typeof e)
+                            return !1;
+                        try {
+                            return null === document.getElementById(e) && (s = n,
+                            c = e,
+                            d = document.getElementsByTagName("body")[0],
+                            l = function() {
+                                t.countMetric(f(a, "loaded", i), 1),
+                                t.logCsaEvent(f(r, "loaded", i)),
+                                t.sendAdBarTrace("pixels", {
+                                    loaded: {
+                                        pixelUrl: n,
+                                        additionalTrace: o
+                                    }
+                                })
+                            }
+                            ,
+                            u = function() {
+                                t.countMetric(f(a, "error", i), 1),
+                                t.logCsaEvent(f(r, "error", i)),
+                                t.sendAdBarTrace("pixels", {
+                                    error: {
+                                        pixelUrl: n,
+                                        additionalTrace: o
+                                    }
+                                })
+                            }
+                            ,
+                            (p = document.createElement("img")).id = c,
+                            p.src = s,
+                            p.style.display = "none",
+                            p.onload = l,
+                            p.onerror = u,
+                            d.appendChild(p),
+                            t.logCsaEvent(f(r, "fired", i)),
+                            t.countMetric(f(a, "fired", i), 1),
+                            t.sendAdBarTrace("pixels", {
+                                fired: {
+                                    pixelUrl: n,
+                                    additionalTrace: o
+                                }
+                            }),
+                            !0)
+                        } catch (e) {
+                            return t.logError("Error firing pixels: " + n, e),
+                            !1
+                        }
+                        var s, c, d, l, u, p
+                    }
+                }
+                , {}],
+                14: [function(e, t, n) {
+                    var a = null
+                      , r = null
+                      , i = {
+                        ext: {}
+                    };
+                    i.ext.inViewPercentage = function() {
+                        return a = a || 0,
+                        Math.round(100 * a)
+                    }
+                    ,
+                    i.ext.geom = function() {
+                        return r = r || {}
+                    }
+                    ,
+                    t.exports.produce = function() {
+                        return i
+                    }
+                    ,
+                    t.exports.update = function(e) {
+                        null === (a = e && e.geom && e.geom.self.iv) && delete i.ext.inViewPercentage,
+                        null === (r = e && e.geom) && delete i.ext.geom
+                    }
+                }
+                , {}],
+                15: [function(e, t, n) {
+                    t.exports.AD_LOAD_COUNTERS = {
+                        IFRAME_INIT: "adload:iframeinitialized",
+                        RENDER_START: "adload:renderstart",
+                        RENDER_END: "adload:renderend",
+                        CREATIVE_WRITTEN: "adload:creativewritten",
+                        IMP: "adload:impression",
+                        UNSERVED_IMP: "adload:unservedimpression",
+                        VIEWABILITY: "adload:viewability",
+                        UNSERVED_VIEWABILITY: "adload:unservedviewability",
+                        MEASURABILITY: "adload:measurability",
+                        MEASUREMENT_HTML: "adload:measurementhtml"
+                    },
+                    t.exports.AD_FETCH_COUNTERS = {
+                        REQUEST_START: "adfetch:request",
+                        PUNT_RETURNED: "adfetch:punt",
+                        ERROR_RETURNED: "adfetch:error",
+                        EMPTY_RESPONSE: "adfetch:noad",
+                        RENDERED_AD: "adfetch:renderad",
+                        RENDER_ERROR: "adfetch:rendererror",
+                        HTTP_ERROR: "adfetch:httperror",
+                        EXCEPTION: "adfetch:exception"
+                    },
+                    t.exports.RESOURCE_TIMING_DATA_COUNTERS = {
+                        DEPENDENCIES_NOT_MET: "ResourceTimingData.DependenciesNotMet"
+                    },
+                    t.exports.GET_QUERY_PARAM_COUNTER = "getqueryparam",
+                    t.exports.IMPRESSION_COUNTERS = {
+                        LEGACY_IMPRESSION_COUNTER: "imp:legacy",
+                        GLOBAL_IMPRESSION_FIRED_COUNTER: "impressionFired"
+                    },
+                    t.exports.BTR_COUNTERS = {
+                        LOADED: "btr:loaded",
+                        ERROR: "btr:error",
+                        IMPRESSION: "btr:impression",
+                        NO_IMAGES: "btr:noimages",
+                        PIXELS: "btr:pixels"
+                    }
+                }
+                , {}],
+                16: [function(e, t, n) {
+                    t.exports.AD_LOAD_EVENTS = {
+                        IFRAME_INIT: "adload_iframeinitialized",
+                        RENDER_START: "adload_renderstart",
+                        RENDER_END: "adload_renderend",
+                        CREATIVE_WRITTEN: "adload_creativewritten",
+                        IMP: "impression",
+                        UNSERVED_IMP: "unservedimpression",
+                        VIEWABILITY: "viewability",
+                        UNSERVED_VIEWABILITY: "unservedviewability",
+                        MEASURABILITY: "measurability",
+                        MEASUREMENT_HTML: "measurementhtml"
+                    },
+                    t.exports.MESSENGER_EVENTS = {
+                        API: "messenger_"
+                    },
+                    t.exports.AD_FETCH_EVENTS = {
+                        REQUEST_START: "adfetch_request",
+                        PUNT_RETURNED: "adfetch_punt",
+                        ERROR_RETURNED: "adfetch_error",
+                        EMPTY_RESPONSE: "adfetch_noad",
+                        RENDERED_AD: "adfetch_renderad",
+                        RENDER_ERROR: "adfetch_rendererror",
+                        HTTP_ERROR: "adfetch_httperror",
+                        EXCEPTION: "adfetch_exception"
+                    },
+                    t.exports.RESOURCE_TIMING_DATA_EVENTS = {
+                        DEPENDENCIES_NOT_MET: "resourceTimingData_DependenciesNotMet",
+                        DEPENDENCIES_MET: "resourceTimingData_DependenciesMet"
+                    }
+                }
+                , {}],
+                17: [function(e, u, t) {
+                    /*
+    @license
+    Underscore.js 1.8.3
+    http://underscorejs.org
+    (c) 2009-2015 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+    Underscore may be freely distributed under the MIT license.
+*/
+                    var a = function() {
+                        return window.P && window.P.AUI_BUILD_DATE
+                    };
+                    u.exports.throttle = function(n, a, r) {
+                        var i, o, s, c = null, d = 0;
+                        r || (r = {});
+                        var l = function() {
+                            d = !1 === r.leading ? 0 : u.exports.now(),
+                            c = null,
+                            s = n.apply(i, o),
+                            c || (i = o = null)
+                        };
+                        return function() {
+                            var e = u.exports.now();
+                            d || !1 !== r.leading || (d = e);
+                            var t = a - (e - d);
+                            return i = this,
+                            o = arguments,
+                            t <= 0 || a < t ? (c && (clearTimeout(c),
+                            c = null),
+                            d = e,
+                            s = n.apply(i, o),
+                            c || (i = o = null)) : c || !1 === r.trailing || (c = setTimeout(l, t)),
+                            s
+                        }
+                    }
+                    ,
+                    u.exports.now = function() {
+                        return Date.now ? Date.now() : (new Date).getTime()
+                    }
+                    ,
+                    u.exports.addListener = function(e, t, n) {
+                        e.addEventListener ? e.addEventListener(t, n, !1) : window.attachEvent && e.attachEvent("on" + t, n)
+                    }
+                    ,
+                    u.exports.removeListener = function(e, t, n) {
+                        e.removeEventListener && e.removeEventListener(t, n, !1)
+                    }
+                    ,
+                    u.exports.addWindowListener = function(e, t) {
+                        u.exports.addListener(window, e, t)
+                    }
+                    ,
+                    u.exports.removeWindowListener = function(e, t) {
+                        window.removeEventListener ? window.removeEventListener(e, t, !1) : window.detachEvent && window.detachEvent("on" + e, t)
+                    }
+                    ,
+                    u.exports.ensureMessageListener = function(e) {
+                        u.exports.removeWindowListener("message", e),
+                        u.exports.addWindowListener("message", e)
+                    }
+                    ,
+                    u.exports.decodeBase64 = function(e) {
+                        var t, n, a, r, i, o, s = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=", c = "", d = 0;
+                        for (e = e.replace(/[^A-Za-z0-9\+\/\=]/g, ""); d < e.length; )
+                            t = s.indexOf(e.charAt(d++)) << 2 | (r = s.indexOf(e.charAt(d++))) >> 4,
+                            n = (15 & r) << 4 | (i = s.indexOf(e.charAt(d++))) >> 2,
+                            a = (3 & i) << 6 | (o = s.indexOf(e.charAt(d++))),
+                            c += String.fromCharCode(t),
+                            64 != i && (c += String.fromCharCode(n)),
+                            64 != o && (c += String.fromCharCode(a));
+                        return c = function(e) {
+                            for (var t = "", n = 0, a = 0, r = 0, i = 0; n < e.length; )
+                                (a = e.charCodeAt(n)) < 128 ? (t += String.fromCharCode(a),
+                                n++) : 191 < a && a < 224 ? (r = e.charCodeAt(n + 1),
+                                t += String.fromCharCode((31 & a) << 6 | 63 & r),
+                                n += 2) : (r = e.charCodeAt(n + 1),
+                                i = e.charCodeAt(n + 2),
+                                t += String.fromCharCode((15 & a) << 12 | (63 & r) << 6 | 63 & i),
+                                n += 3);
+                            return t
+                        }(c)
+                    }
+                    ,
+                    u.exports.createScript = function(e, t, n, a, r) {
+                        if (!document.getElementById(n)) {
+                            var i = document.createElement("script");
+                            return i.async = !0,
+                            i.setAttribute("crossorigin", "anonymous"),
+                            i.src = e,
+                            i.type = t,
+                            i.id = n,
+                            i.onerror = a,
+                            i.onload = r,
+                            i
+                        }
+                    }
+                    ,
+                    u.exports.isAUIAvailable = a,
+                    u.exports.safeFunctionWrapper = function(e, t, n) {
+                        return a() && "function" == typeof window.P.guardError ? P.guardError("APE-SafeFrame", e) : function() {
+                            try {
+                                e.apply(this, arguments)
+                            } catch (e) {
+                                "function" == typeof t && n && t(n, e)
+                            }
+                        }
+                    }
+                    ,
+                    u.exports.getCookie = function(e) {
+                        var t = e + "=";
+                        try {
+                            for (var n = decodeURIComponent(document.cookie).split(";"), a = 0; a < n.length; a++) {
+                                for (var r = n[a]; " " == r.charAt(0); )
+                                    r = r.substring(1);
+                                if (0 == r.indexOf(t))
+                                    return r.substring(t.length, r.length)
+                            }
+                        } catch (e) {}
+                        return ""
+                    }
+                    ,
+                    u.exports.disableCookieAccess = function() {
+                        try {
+                            Object && Object.defineProperty && "function" == typeof Object.defineProperty ? Object.defineProperty(document, "cookie", {
+                                get: function() {
+                                    return ""
+                                },
+                                set: function() {}
+                            }) : (document.__defineGetter__("cookie", function() {
+                                return ""
+                            }),
+                            document.__defineSetter__("cookie", function() {}))
+                        } catch (e) {}
+                    }
+                    ,
+                    u.exports.setObjectStyles = function(e, t) {
+                        if (e && t)
+                            for (var n in t)
+                                e.style[n] = t[n];
+                        return e
+                    }
+                    ,
+                    u.exports.ABP_STATUS = {
+                        1: "Enabled",
+                        0: "NotEnabled",
+                        "-1": "Unknown"
+                    },
+                    u.exports.hasHostname = function(e) {
+                        var t = "";
+                        return e && (t = -1 < e.indexOf("//") ? e.split("/")[2] : e.split("/")[0]),
+                        0 != t.length
+                    }
+                    ,
+                    u.exports.isVideo = function(e) {
+                        return "V" === e
+                    }
+                }
+                , {}]
+            }, {}, [12]);
+        </script><style>body{background:transparent;}</style><script type="data-doubleclick" src="./blank_pixel._V137875076_.gif"></script> <script>document.defaultAd = {h:90,w:728}; document.ad = document.defaultAd; document.adSlotConfig = {allowFadeIn: true, resizeIframe: true};</script>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <style>
+ @font-face {
+ font-family: 'Amazon Ember';
+ src: url(https://m.media-amazon.com/images/G/01/AUIClients/AmazonUIFont-amazonember_rg-cc7ebaa05a2cd3b02c0929ac0475a44ab30b7efa._V2_.woff2)
+ format('woff2'),
+ url(https://m.media-amazon.com/images/G/01/AUIClients/AmazonUIFont-amazonember_rg-8a9db402d8966ae93717c348b9ab0bd08703a7a7._V2_.woff)
+ format('woff');
+ }
+ @font-face {
+ font-family: 'Amazon Ember';
+ font-style: italic;
+ src: url(https://m.media-amazon.com/images/G/01/AUIClients/AmazonUIFont-amazonember_rgit-9cc1bb64eb270135f1adf3a4881c2ee5e7c37be5._V2_.woff2)
+ format('woff2'),
+ url(https://m.media-amazon.com/images/G/01/AUIClients/AmazonUIFont-amazonember_rgit-a4dc98d644ff2aedd41da3da462f09ffce86eafb._V2_.woff)
+ format('woff');
+ }
+ @font-face {
+ font-family: 'Amazon Ember';
+ font-weight: 700;
+ src: url(https://m.media-amazon.com/images/G/01/AUIClients/AmazonUIFont-amazonember_bd-46b91bda68161c14e554a779643ef4957431987b._V2_.woff2)
+ format('woff2'),
+ url(https://m.media-amazon.com/images/G/01/AUIClients/AmazonUIFont-amazonember_bd-b605252f87b8b3df5ae206596dac0938fc5888bc._V2_.woff)
+ format('woff');
+ }
+ @font-face {
+ font-family: 'Amazon Ember';
+ font-style: italic;
+ font-weight: 700;
+ src: url(https://m.media-amazon.com/images/G/01/AUIClients/AmazonUIFont-amazonember_bdit-80ff7aba37dd1ff5a6b90233a19e3a780a96dc2f._V2_.woff2)
+ format('woff2'),
+ url(https://m.media-amazon.com/images/G/01/AUIClients/AmazonUIFont-amazonember_bdit-57598ce426a612be5a1d15eee08252668fca5e7a._V2_.woff)
+ format('woff');
+ }
+ @font-face {
+ font-family: 'Amazon Ember';
+ font-display: swap;
+ font-weight: 300;
+ src: url(https://m.media-amazon.com/images/G/01/AUIClients/AmazonUIFont-amazonember_lt-245045fa7de5df027437f47209a5add3b48108a1.woff2)
+ format('woff2');
+ }
+ 
+ body, html {
+ margin: 0;
+ font-family: 'Amazon Ember', arial, sans-serif;
+ box-sizing: border-box;
+ -moz-box-sizing: border-box; -webkit-box-sizing: border-box;
+ width: 100%;
+ height: 100%;
+ }
+ </style>
+ <title></title>
+ 
+ 
+ 
+ 
+ <script>
+ var PerformanceEventManager=(e=>{var t={};function n(r){var o;return(t[r]||(o=t[r]={i:r,l:!1,exports:{}},e[r].call(o.exports,o,o.exports,n),o.l=!0,o)).exports}return n.m=e,n.c=t,n.d=function(e,t,r){n.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:r})},n.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},n.t=function(e,t){if(1&t&&(e=n(e)),8&t)return e;if(4&t&&"object"==typeof e&&e&&e.__esModule)return e;var r=Object.create(null);if(n.r(r),Object.defineProperty(r,"default",{enumerable:!0,value:e}),2&t&&"string"!=typeof e)for(var o in e)n.d(r,o,function(t){return e[t]}.bind(null,o));return r},n.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return n.d(t,"a",t),t},n.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},n.p="",n(n.s=65)})({10:function(e,t,n){Object.defineProperty(t,"__esModule",{value:!0}),t.default=t.VISUAL_COMPLETENESS_LATENCY=t.UNCAUGHT_ERROR=t.CREATIVE_LOAD_LATENCY=void 0;let r=t.UNCAUGHT_ERROR="uncaughtError";t.CREATIVE_LOAD_LATENCY="creativeLoadLatency",t.VISUAL_COMPLETENESS_LATENCY="visualCompletenessLatency";t.default=class{constructor(e){if(this.events={[r]:{}},this.timers={},this.onNewError=function(){},this.window=e&&e.window||"undefined"!=typeof window&&window,!this.window||!this.window.document)throw new Error("Window and/or document is not defined");this.trackLoadLatency(),this.trackVisualCompletenessLatency(),this.addErrorListener()}trackLoadLatency(){this.timers.creativeLoadLatency=new Date}trackVisualCompletenessLatency(){this.timers.visualCompletenessLatency=new Date}addErrorListener(){let e=this.events[r];this.addListener(this.window,"error",t=>{let n=t.message;t.error&&t.error.stack&&(n=(t=t.message+" : "+t.error.stack).length<500?t:t.substring(0,500)),void 0===e[n]&&(e[n]=!0,this.onNewError(n))})}addListener(e,t,n){function r(e=window.event){return n(e)}if(e.addEventListener)e.addEventListener(t,r,!0);else if(t="on"+t,e.attachEvent)e.attachEvent(t,r);else{let n=e[t];e[t]=function(){r.apply(this,arguments),"function"==typeof n&&n.apply(this,arguments)}}}}},65:function(e,t,n){e.exports=n(10)}});;
+ var performanceEventManager = new PerformanceEventManager.default();
+ </script>
+
+ <div id="ad" style="width: 100%; height: 100%;"><div style="overflow:hidden;width:100%;height:100%"><span aria-hidden="true" id="adLink-label" style="position:absolute;left:0;z-index:-1;opacity:0;user-select:none;clip-path:inset(50%);height:1px;overflow:hidden;white-space:nowrap;width:1px">Annuncio sponsorizzato.
+Logo del brand.
+Immagine del brand.
+Blink Outdoor | Videocamera di sicurezza da esterno in HD, senza fili, 2 videocamere + Blink Videocitofono (Video Doorbell), Audio bidirezionale, video HD, compatibile con Alexa
+180.98</span><div style="position:absolute;width:100%;height:100%;overflow:hidden;pointer-events:auto"><div style="z-index:-2;background:#fff;position:absolute;width:100%;height:100%"></div><a aria-labelledby="adLink adLink-label" id="adLink" style="background:transparent url(&quot;https://m.media-amazon.com/images/G/01/d16g/kpw/transparent-1x1.png&quot;) repeat 0 0;bottom:0;cursor:pointer;left:0;position:absolute;right:0;top:0;z-index:1;display:block;width:100%;height:100%;pointer-events:auto;border:1px solid #ccc;box-sizing:border-box" href="https://www.amazon.it/dp/B099LH35PZ?aref=YG9veEJ4DF&amp;aaxitk=772b0b43680b3794995765105f210035&amp;language=it_IT&amp;smid=A11IL2PNWYJU7H&amp;ref=dacx_dp_592915181371948501_594049943943626980" target="_top"></a></div><div test-id="grid-layout" style="display:grid;height:100%;width:100%;box-sizing:border-box;position:relative;grid-template-areas:&quot; Logo Image BuyBox&quot;;grid-template-rows:100%;grid-template-columns:25% 25% 50%"><div style="width:100%;height:100%;grid-area:Logo"><div style="width:100%;height:100%"><picture><source type="image/webp" srcset="https://m.media-amazon.com/images/S/al-eu-726f4d26-7fdb/5c5fae3d-c3cb-42de-b820-5528f75abeec._AC_PT0_BL0_SX364_SY180_QL95_FMwebp_.png"><source srcset="https://m.media-amazon.com/images/S/al-eu-726f4d26-7fdb/5c5fae3d-c3cb-42de-b820-5528f75abeec._AC_PT0_BL0_SX364_SY180_QL95_.png"><img loading="eager" alt="" style="width:100%;height:100%;object-fit:contain;object-position:center;transform:var(--_18454ub0);transform-origin:var(--_18454ub1);--_18454ub0:scale(0.8)" src="./5c5fae3d-c3cb-42de-b820-5528f75abeec._AC_PT0_BL0_SX364_SY180_.png"></picture><div></div></div></div><div style="width:100%;height:100%;grid-area:Image"><div style="transform:var(--pt4ymu0);--pt4ymu0:scale(0.82);position:relative;width:100%;height:100%"><picture><source type="image/webp" srcset="https://m.media-amazon.com/images/I/41AmvFZOsZL._AC_PT0_BL0_SX364_SY180_QL95_FMwebp_.jpg"><source srcset="https://m.media-amazon.com/images/I/41AmvFZOsZL._AC_PT0_BL0_SX364_SY180_QL95_.jpg"><img loading="eager" alt="Immagine del prodotto" style="width:100%;height:100%;object-fit:scale-down;object-position:center;box-sizing:border-box;padding:2px;transform:var(--pt4ymu1);--pt4ymu1:scale(90%);position:relative;z-index:-10" src="./41AmvFZOsZL._AC_PT0_BL0_SX364_SY180_.jpg"></picture><div style="width:100%;height:100%;background-color:#0F111108;border-radius:4px;position:absolute;top:0;left:0"></div></div></div><div style="width:100%;height:100%;grid-area:BuyBox"><div id="dynamic-bb" lang="it" style="display: grid; height: 100%; width: 100%; visibility: var(--_1mmj4tg0); --_1mmj4tg0: visible;"><div style="box-sizing: border-box; width: 100%; height: 100%; display: grid; justify-items: end; align-content: center; row-gap: 4px; padding: 8px 16px; grid-template-columns: 50% 50%;"><div style="display: grid; flex-direction: column; justify-content: space-between; align-items: start; gap: 2px; grid-area: 1 / 1 / auto / span 1;"><div style="color: rgb(15, 17, 17); overflow: hidden; text-align: var(--_1g2mm5f0); font-size: 14px; line-height: 20px; --_1g2mm5f1: 1; --_1g2mm5f0: start; width: 200%; text-overflow: ellipsis; white-space: nowrap;">Blink Outdoor | Videocamera di sicurezza da esterno in HD, senza fili, 2 videocamere + Blink Videocitofono (Video Doorbell), Audio bidirezionale, video HD, compatibile con Alexa </div><div><div style="display: flex; justify-content: var(--_3jg6vb0); align-items: center; flex-wrap: wrap; column-gap: 4px; --_3jg6vb0: start;"><div style="display: flex; flex-direction: row;"><div id="price-integer" style="color: rgb(15, 17, 17); font-style: normal; font-weight: 400; display: grid; align-items: end; font-size: 16px; line-height: 20px;">180</div><div id="price-fraction" style="color: rgb(15, 17, 17); font-style: normal; font-weight: 400; vertical-align: top; padding-right: 1px; font-size: 10px; line-height: 16px;">98</div><div id="symbolTwo" style="color: rgb(15, 17, 17); font-style: normal; font-weight: 400; vertical-align: top; padding-right: 1px; font-size: 10px; line-height: 16px;">€</div></div><div style="display: grid; align-items: center;"><svg xmlns="http://www.w3.org/2000/svg" width="44" height="13" viewBox="0 0 37 11" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M7.47241 2.6665H6.19741C6.13141 2.6665 5.94841 2.6415 5.89841 2.7515L3.04341 7.1025L1.75441 5.5545C1.71941 5.5045 1.66041 5.4745 1.59641 5.4745H0.189407C0.117407 5.4745 0.0514068 5.5135 0.0194068 5.5745C-0.0115932 5.6355 -0.00559317 5.7085 0.0384068 5.7625L3.00241 9.2575C3.03841 9.3025 3.09441 9.3285 3.15341 9.3285C3.15641 9.3285 3.15941 9.3285 3.16141 9.3275C3.22341 9.3255 3.28041 9.2935 3.31341 9.2445L7.56141 3.0085C7.73341 2.7845 7.54041 2.6665 7.47241 2.6665Z" fill="#F8991D"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M10.8723 3.46875C10.5003 3.46875 10.1483 3.56275 9.82031 3.75275V6.51675C10.1353 6.70575 10.4853 6.80075 10.8723 6.80075C11.2733 6.80075 11.5683 6.66775 11.7583 6.40075C11.9483 6.13475 12.0433 5.71475 12.0433 5.13975C12.0433 4.55775 11.9493 4.13475 11.7643 3.86775C11.5773 3.60175 11.2803 3.46875 10.8723 3.46875ZM8.25391 2.7325C8.25391 2.6345 8.27491 2.5665 8.31791 2.5275C8.36091 2.4895 8.42991 2.4695 8.52191 2.4695H9.29591C9.45991 2.4695 9.56091 2.5475 9.59691 2.7005L9.67191 2.9745C9.88591 2.7715 10.1449 2.6105 10.4499 2.4905C10.7539 2.3715 11.0629 2.3125 11.3789 2.3125C12.0729 2.3125 12.6219 2.5605 13.0269 3.0585C13.4319 3.5555 13.6339 4.2285 13.6339 5.0765C13.6339 5.6575 13.5329 6.1655 13.3329 6.6005C13.1329 7.0345 12.8599 7.3695 12.5179 7.6035C12.1739 7.8395 11.7789 7.9565 11.3359 7.9565C11.0419 7.9565 10.7629 7.9105 10.4979 7.8195C10.2329 7.7285 10.0079 7.6025 9.82191 7.4415V9.7425C9.82191 9.8415 9.80191 9.9095 9.76291 9.9475C9.72391 9.9865 9.65291 10.0055 9.55291 10.0055H8.52191C8.42991 10.0055 8.36091 9.9865 8.31791 9.9475C8.27491 9.9095 8.25391 9.8415 8.25391 9.7425V2.7325Z" fill="#2492C1"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M16.1695 3.26997C16.4555 2.96097 16.7265 2.74297 16.9805 2.61297C17.2335 2.48297 17.5045 2.41797 17.7905 2.41797H17.9405C18.0415 2.41797 18.1125 2.43797 18.1555 2.47697C18.1985 2.51497 18.2205 2.58297 18.2205 2.68097V3.56397C18.2205 3.65497 18.2005 3.72197 18.1615 3.76397C18.1215 3.80597 18.0525 3.82697 17.9515 3.82697C17.9015 3.82697 17.8375 3.82297 17.7585 3.81597C17.6805 3.80997 17.5795 3.80597 17.4575 3.80597C17.2935 3.80597 17.0935 3.82897 16.8565 3.87397C16.6205 3.91997 16.4195 3.97797 16.2555 4.04797V7.57897C16.2555 7.66997 16.2355 7.73697 16.1955 7.77897C16.1565 7.82097 16.0865 7.84197 15.9865 7.84197H14.9555C14.8625 7.84197 14.7945 7.82097 14.7515 7.77897C14.7085 7.73697 14.6875 7.66997 14.6875 7.57897V2.73397C14.6875 2.63597 14.7085 2.56697 14.7515 2.52897C14.7945 2.48997 14.8625 2.47097 14.9555 2.47097H15.7295C15.8945 2.47097 15.9935 2.54797 16.0295 2.70197L16.1695 3.26997Z" fill="#2492C1"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M18.9766 2.7337C18.9766 2.6357 18.9976 2.5667 19.0396 2.5287C19.0836 2.4897 19.1516 2.4707 19.2446 2.4707H20.2756C20.3756 2.4707 20.4456 2.4897 20.4846 2.5287C20.5246 2.5667 20.5436 2.6357 20.5436 2.7337V7.5787C20.5436 7.6697 20.5246 7.7367 20.4846 7.7787C20.4456 7.8207 20.3756 7.8417 20.2756 7.8417H19.2446C19.1516 7.8417 19.0836 7.8207 19.0396 7.7787C18.9976 7.7367 18.9766 7.6697 18.9766 7.5787V2.7337ZM19.7604 1.64C19.4894 1.64 19.2704 1.566 19.1064 1.419C18.9414 1.272 18.8594 1.072 18.8594 0.82C18.8594 0.568 18.9414 0.368 19.1064 0.221C19.2704 0.074 19.4894 0 19.7604 0C20.0334 0 20.2504 0.074 20.4154 0.221C20.5814 0.368 20.6634 0.568 20.6634 0.82C20.6634 1.072 20.5814 1.272 20.4154 1.419C20.2504 1.566 20.0334 1.64 19.7604 1.64Z" fill="#2492C1"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M23.304 2.9845C23.683 2.7395 24.025 2.5665 24.329 2.4645C24.633 2.3625 24.947 2.3125 25.269 2.3125C25.913 2.3125 26.367 2.5365 26.632 2.9845C26.997 2.7465 27.341 2.5745 27.663 2.4695C27.986 2.3645 28.319 2.3125 28.662 2.3125C29.163 2.3125 29.552 2.4485 29.827 2.7215C30.103 2.9955 30.241 3.3775 30.241 3.8675V7.5775C30.241 7.6685 30.221 7.7355 30.182 7.7775C30.142 7.8195 30.073 7.8405 29.972 7.8405H28.942C28.848 7.8405 28.78 7.8195 28.738 7.7775C28.695 7.7355 28.673 7.6685 28.673 7.5775V4.2035C28.673 3.7275 28.454 3.4895 28.018 3.4895C27.631 3.4895 27.241 3.5805 26.847 3.7625V3.8675V7.5775C26.847 7.6685 26.827 7.7355 26.788 7.7775C26.748 7.8195 26.679 7.8405 26.578 7.8405H25.548C25.454 7.8405 25.387 7.8195 25.344 7.7775C25.301 7.7355 25.28 7.6685 25.28 7.5775V4.2035C25.28 3.7275 25.061 3.4895 24.624 3.4895C24.224 3.4895 23.829 3.5835 23.444 3.7735V7.5775C23.444 7.6685 23.423 7.7355 23.384 7.7775C23.345 7.8195 23.275 7.8405 23.175 7.8405H22.144C22.051 7.8405 21.983 7.8195 21.94 7.7775C21.897 7.7355 21.875 7.6685 21.875 7.5775V2.7325C21.875 2.6345 21.897 2.5665 21.94 2.5275C21.983 2.4885 22.051 2.4695 22.144 2.4695H22.917C23.081 2.4695 23.182 2.5475 23.218 2.7005L23.304 2.9845Z" fill="#2492C1"></path><mask id="mask0_1754_227274" maskUnits="userSpaceOnUse" x="31" y="2" width="6" height="6" style="mask-type: luminance;"><path fill-rule="evenodd" clip-rule="evenodd" d="M31.1406 2.3125H36.0264V7.9995H31.1406V2.3125Z" fill="white"></path></mask><g mask="url(#mask0_1754_227274)"><path fill-rule="evenodd" clip-rule="evenodd" d="M33.7818 3.375C33.0948 3.375 32.6968 3.789 32.5898 4.615C32.8758 4.671 33.1938 4.699 33.5458 4.699C33.9108 4.699 34.1758 4.645 34.3398 4.536C34.5048 4.428 34.5868 4.261 34.5868 4.037C34.5868 3.596 34.3188 3.375 33.7818 3.375ZM33.6326 5.6445C33.2236 5.6445 32.8696 5.6065 32.5686 5.5285C32.6116 5.9985 32.7576 6.3345 33.0036 6.5385C33.2506 6.7415 33.6246 6.8425 34.1266 6.8425C34.3266 6.8425 34.5216 6.8305 34.7116 6.8065C34.9006 6.7815 35.1636 6.7275 35.5006 6.6435C35.5216 6.6365 35.5436 6.6305 35.5646 6.6275C35.5866 6.6245 35.6036 6.6225 35.6186 6.6225C35.7396 6.6225 35.8016 6.7025 35.8016 6.8635V7.3475C35.8016 7.4595 35.7846 7.5385 35.7536 7.5835C35.7206 7.6295 35.6576 7.6695 35.5646 7.7045C35.0426 7.9005 34.4876 7.9995 33.9006 7.9995C33.0126 7.9995 32.3306 7.7605 31.8546 7.2845C31.3786 6.8075 31.1406 6.1245 31.1406 5.2345C31.1406 4.3235 31.3846 3.6095 31.8706 3.0905C32.3576 2.5725 33.0346 2.3125 33.9006 2.3125C34.5656 2.3125 35.0876 2.4705 35.4636 2.7855C35.8386 3.1015 36.0266 3.5215 36.0266 4.0475C36.0266 4.5725 35.8246 4.9705 35.4206 5.2405C35.0146 5.5095 34.4196 5.6445 33.6326 5.6445Z" fill="#2492C1"></path></g></svg></div></div><div style="display: flex; justify-content: var(--_3jg6vb0); --_3jg6vb0: start; color: rgb(86, 89, 89); font-style: normal; align-self: center; text-align: var(--ocofv45); font-size: var(--ocofv43); line-height: var(--ocofv44); --ocofv45: start; --ocofv43: 12px; --ocofv44: 16px;">Spedizione e altri dettagli</div></div></div></div></div></div></div></div></div>
+
+ <script>var arrayPrototypeIncludes=(e=>{var r={};function t(n){var o;return(r[n]||(o=r[n]={i:n,l:!1,exports:{}},e[n].call(o.exports,o,o.exports,t),o.l=!0,o)).exports}return t.m=e,t.c=r,t.d=function(e,r,n){t.o(e,r)||Object.defineProperty(e,r,{enumerable:!0,get:n})},t.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},t.t=function(e,r){if(1&r&&(e=t(e)),8&r)return e;if(4&r&&"object"==typeof e&&e&&e.__esModule)return e;var n=Object.create(null);if(t.r(n),Object.defineProperty(n,"default",{enumerable:!0,value:e}),2&r&&"string"!=typeof e)for(var o in e)t.d(n,o,function(r){return e[r]}.bind(null,o));return n},t.n=function(e){var r=e&&e.__esModule?function(){return e.default}:function(){return e};return t.d(r,"a",r),r},t.o=function(e,r){return Object.prototype.hasOwnProperty.call(e,r)},t.p="",t(t.s=0)})([function(e,r,t){e.exports=t(1)},function(e,r,t){Array.prototype.includes||(Array.prototype.includes=function(e){if(null==this)throw new TypeError("Array.prototype.includes called on null or undefined");var r=Object(this),t=parseInt(r.length,10)||0;if(0!==t){var n,o=parseInt(arguments[1],10)||0;let u;for(0<=o?u=o:(u=t+o)<0&&(u=0);u<t;){if(e===(n=r[u])||e!=e&&n!=n)return!0;u++}}return!1})}]);
+
+var objectAssign=(e=>{var t={};function n(r){var o;return(t[r]||(o=t[r]={i:r,l:!1,exports:{}},e[r].call(o.exports,o,o.exports,n),o.l=!0,o)).exports}return n.m=e,n.c=t,n.d=function(e,t,r){n.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:r})},n.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},n.t=function(e,t){if(1&t&&(e=n(e)),8&t)return e;if(4&t&&"object"==typeof e&&e&&e.__esModule)return e;var r=Object.create(null);if(n.r(r),Object.defineProperty(r,"default",{enumerable:!0,value:e}),2&t&&"string"!=typeof e)for(var o in e)n.d(r,o,function(t){return e[t]}.bind(null,o));return r},n.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return n.d(t,"a",t),t},n.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},n.p="",n(n.s=2)})([,,function(e,t,n){e.exports=n(3)},function(e,t,n){"function"!=typeof Object.assign&&(Object.assign=function(e){if(null==e)throw new TypeError("Cannot convert undefined or null to object");var t=Object(e);for(let e=1;e<arguments.length;e++){var n=arguments[e];if(null!=n)for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(t[r]=n[r])}return t})}]);</script>
+ 
+ <script src="./41qDlz8InOL.js.download"></script>
+ <script src="./714+3hZjzaL.js.download"></script>
+ <script charset="UTF-8" src="./91x6Aw8H++L.js.download"></script>
+ <script>
+ ReactDOM.hydrate(AdaptiveRenderer.default({"creativeInformation":{"components":["Image","BuyBox","Logo"],"variation":"add-to-cart","productImg":{"url":"https://m.media-amazon.com/images/I/41AmvFZOsZL.jpg"},"customImages":{"square":null,"wide":null,"tall":null},"staticCustomImages":{},"productDescription":"Blink Outdoor | Videocamera di sicurezza da esterno in HD, senza fili, 2 videocamere + Blink Videocitofono (Video Doorbell), Audio bidirezionale, video HD, compatibile con Alexa","priceInformation":{"price":180.98,"fullPrice":null,"pricePerUnit":"","basisPrice":{"currency":{"amount":249.98,"currencyCode":"EUR","displayString":"€249.98"},"currencyRange":{},"pricePerUnit":{"baseValueAmount":0},"label":"Prezzo di vendita consigliato del pacchetto: ","shortLabel":"Prezzo consigliato:","addToCartUrl":"https://www.amazon.it/advertising/atc?ie=UTF8&token=AE83B1517721D2DA9877D1F0B35951D6F6078DE2&time=1741859826411&merchantId=A11IL2PNWYJU7H&asin=B099LH35PZ&program=dads&adPrice=249.98&offerListingId=ynRgngI9VQtVnnR4kYtKXQfD6SdryKOB7%252BFcPvqmJczlBU%252B%252F7i7t0Y7fEsSECsR88gzWNAMAzxtZFSOVGT%252BTFvgljzVI7PHcGEqJA4x0UfR4v1ZgxyVy6BhWZo7Q2nKry8Wu4uerIxY22fc1dFLoMvFdPuBu22fw","suppressedByMAP":false}},"ratings":{"stars":0,"amount":0},"clickThroughInfo":{"adLink":"https://www.amazon.it/dp/B099LH35PZ?aref=YG9veEJ4DF&aaxitk=772b0b43680b3794995765105f210035&language=it_IT&smid=A11IL2PNWYJU7H&ref=dacx_dp_592915181371948501_594049943943626980","buttonLink":"https://www.amazon.it/advertising/atc?aref=YG9veEJ4DF&aaxitk=772b0b43680b3794995765105f210035&language=it_IT&ie=UTF8&token=224DD86D6ADA0BA71F1FF1A66973D5CA6C69BC5E&time=1741859826411&merchantId=A11IL2PNWYJU7H&asin=B099LH35PZ&program=dads&adPrice=180.98&offerListingId=ynRgngI9VQtVnnR4kYtKXQfD6SdryKOB7%252BFcPvqmJczlBU%252B%252F7i7t0Y7fEsSECsR88gzWNAMAzxtZFSOVGT%252BTFvgljzVI7PHcGEqJA4x0UfR4v1ZgxyVy6BhWZo7Q2nKry8Wu4uerIxY22fc1dFLoMvFdPuBu22fw","reviewLink":"https://www.amazon.it/product-reviews/B099LH35PZ?aref=YG9veEJ4DF&aaxitk=772b0b43680b3794995765105f210035&language=it_IT","impressionUrls":[],"clickUrls":["https://aax-eu.amazon-adsystem.com/x/c/JPYISNLbgouEhYUyinHJedoAAAGVjvOnnQMAAADKAUFvbm9fdHhuX2JpZDMgICBvbm9fdHhuX2ltcDIgICCOis-W/clv1_CEuOPUxokZAIinrVe-MX3gXzSy12bOptnrVb8xe60vJcx38dslHHTfw18HFItlG1gqQxmp9anrWmc0jDH1RxB2k7Kzy6F5bIPUExRWJ6QF_8RokERVQE89Il_ATjLfm-EsjLNhP9s9RSA0MhlFD1a1sJOldNDd93Q1piUbI6XVeDyfnNkkszRVC7PITyOqgoCHBLaoni0btJb3xHMP5wXtdRvdqzivtkDTL9OKAS9DEOh7pKhoKeSlEi3WG4znV6O0C3C_rEgydz2GI4O89YfxSFJH2voVXtAcq0qpPWcLMVDxiK7Z_cpCSvR1n_JdKCndgY2txRc_P4raXjLMW3BctN6-FPZwRvk5Uki_NEEMtx5F9aDnih_gCKp4MaTESSVCdSsnqxomwQlgqpUI6PZHhRdbj6n-o7YtAxF05F5zJkN-J_kwZ9JyRuuJ1tRA8IJZ65T9bQ49ivZwA3TxWvqZkxYxPRs0GBYw1VftVaj_G0Ni9-lLXdzGLRRmdeKKawyfx_0QJJFr1fwT-DhlKHzRz2WxQbIl8XcyufAjPeHJ_edDquGC4v7XcdEWfVcE_GR_huqs4rai2mj7ha_dFHZ7RTqYX_WdiLs4eSWgg8GYH9S-7QJWTwhf9KAPnjJ1tVq_qjm2zYQdgg75IHNYgO4m1dpPqxYUk6DSRc_uZgl4YbPVJnNWSokmoBvS_TGuRdzQs60lFutYMz8vw7P2qsH1hZ-LLacPPv2aGYfQgQAQbfxR3uAsl92yUBs5JgY_Giua52Bz7S6GnayCKkHGOiGiR6rRfPPlFohYZaYPwGukrgMzZTS5Zbvhc7g7KNZkO8bsqbflgTGWSk276ANKwX9qOYoH80v8maPGJ-fglf_BEaztUNNT1LDd0/"],"originUrlDomain":"www.imdb.com","isExternalLink":false,"isOffsite":false},"thirdPartyInfo":{},"dealBadge":{},"isPrimeEligible":true,"eeBadge":false,"promotion":{"value":0,"class":"","type":""},"logoImgUrl":"https://m.media-amazon.com/images/S/al-eu-726f4d26-7fdb/5c5fae3d-c3cb-42de-b820-5528f75abeec.png","border":true,"releaseDate":"","climatePledgeFriendly":false,"vehiclePriceInfo":null},"renderingContext":{"isMirrorCSlot":false,"deviceType":"desktop","slotName":"inline50_728x90","locale":"IT","language":"it","slotSize":{"width":728,"height":90}}}, {weblabs: {"allLatencyFlags":false,"removePerformanceEventManager":false,"removePolyfills":false,"removeFontFamily":false,"lowerImgQuality":false,"homePageRefresh":false,"useExternalCss":false}, layoutId: "default"
+ }), document.getElementById('ad'));
+ </script>
+ 
+ 
+ 
+ 
+ <script src="./saved_resource"></script><script src="./csmv2.js.download"></script><script src="./adforensics_basic.js.download"></script>
+
+ <div id="inline50_webbug" style="display:none;" data-flowtype="pubTech">
+ </div>
+
+<script defer="">setTimeout( function(){SFClient.getDebugInfo({key: "updateAdDetails"}); },0);</script><script defer="">setTimeout(function(){SFClient.customMessage("sendMetrics",JSON.stringify({"slot": "inline50", "event": "fireload"}));},0);</script>
+    
+
+<img id="ape_impression" src="./imp" style="display: none;"></body></html>

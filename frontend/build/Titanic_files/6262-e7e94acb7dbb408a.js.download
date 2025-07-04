@@ -1,0 +1,94 @@
+"use strict";(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[6262],{82542:function(e,t,a){a.d(t,{TY:function(){return n},gA:function(){return o},z7:function(){return r}});var i=a(24667);let r={ADD_TO_LIST:"btp_atl",TRAILER:"btp_trlr",RETRY:"btp_ta",RATING_ROW:"btp_rt",RATING_DISPLAY:"btp_rt_ds",RATE_TRIGGER:"btp_rt_tg",METADATA_LIST:"btp_ml",GENRE_LIST:"btp_gl",PRODUCTION_STATUS:"btp_ps"},n=(0,i.vU)({ratingButtonRatedAriaLabel:{id:"common_ariaLabels_ratingButtonRated",defaultMessage:"Your rating: {rating}"},ratingButtonUnratedAriaLabel:{id:"common_ariaLabels_ratingButtonUnrated",defaultMessage:"Rate {titleName}"},ratingPromptRateLabel:{id:"common_ratingPrompt_rate",defaultMessage:"Rate"},closePrompt:{id:"common_ariaLabel_closePrompt",defaultMessage:"Close Prompt"},addToList:{id:"common_add_to_list_buttonText",defaultMessage:"Add to list"},trailer:{id:"common_buttons_trailer",defaultMessage:"Trailer"}}),o="released"},46262:function(e,t,a){a.d(t,{Pz:function(){return ec},qo:function(){return el},tN:function(){return ep}});var i=a(52322),r=a(30382),n=a.n(r),o=a(2784),s=a(79855),l=a(19596),d=a(45103),p=a(91842),c=a(26524),g=a(60220),m=a(10263),u=a(87961),h=a(78543),f=a(36214),T=a(82542),x=a(49096),b=a(44667),y=a(28827),_=a(38270),v=a(78187),I=a(33274),w=a(72814),P=a(64101),C=a(50926),j=a(16983);let R=e=>{let{originalTitleText:t,titleText:a,id:r,primaryImage:n,titleType:s,titleGenres:l,ratingsSummary:g,canRate:m}=e.titleData,{palette:{baseColor:u}}=(0,o.useContext)(d.ThemeContext),h=(0,c.ik)(),{titleMainLinkBuilder:f}=(0,I.WO)(),{rating:x}=(0,d.useRatingsContext)(r),R=(0,b.P)(x,"user"),$=(0,b.P)(g?.aggregateRating,"imdb"),N=(0,P.K)({originalTitleText:t,titleText:a}),B=(0,y.N)(T.TY.ratingButtonRatedAriaLabel,{rating:R||""}),E=(0,y.N)(T.TY.ratingButtonUnratedAriaLabel,{titleName:N}),W=(0,y.N)(T.TY.ratingPromptRateLabel),z=f({tconst:r,refSuffix:w.Cd.TEXT}),D=f({tconst:r,refSuffix:w.Cd.POSTER}),U=function(e){let t=[],{releaseYear:a,runtime:i,certificate:r,canHaveEpisodes:n}=e,o=(0,v.y)(a,n);return o&&t.push(o),i?.seconds&&t.push((0,_.L)(i.seconds,_.A.HOURS_MINUTES_EXPLICIT)),r?.rating&&t.push(r.rating),t}(e.titleData);return(0,i.jsxs)(L,{className:u,children:[(0,i.jsx)(A,{children:(0,i.jsx)(d.Poster,{imageProps:{imageModel:(0,C.Gs)(n,N),imageType:s?.id,size:"xs"},dynamicWidth:!0,ariaLabel:N,href:D})}),(0,i.jsxs)(k,{children:[(0,i.jsx)(S,{href:z,titleTextClass:"prompt-title-text",typographyType:(N?.length??0)>65?`${(0,p.setTypographyType)("subtitle")}`:"",children:N}),U.length>0&&(0,i.jsx)(d.InlineList,{showDividers:!0,inline:!0,noWrap:!0,"data-testid":T.z7.METADATA_LIST,children:U.map(e=>(0,i.jsx)(d.InlineListItem,{children:e},e))}),l&&l.genres.length>0&&(0,i.jsx)(d.InlineList,{showDividers:!0,inline:!0,noWrap:!0,"data-testid":T.z7.GENRE_LIST,children:l.genres.map(e=>(0,i.jsx)(d.InlineListItem,{children:e.genre.text},`${e.genre.text}`))}),($||m?.isRatable)&&(0,i.jsxs)(O,{"data-testid":T.z7.RATING_ROW,children:[$&&(0,i.jsx)(d.RatingStar,{className:T.z7.RATING_DISPLAY,formattedRating:$,maxRating:10}),m?.isRatable&&N&&!h&&(0,i.jsx)(j.T,{title:{id:r,titleText:N,canRate:m.isRatable},ratingTriggerComponent:e=>{let{onUserRatingClick:t}=e;return(0,i.jsx)(M,{ariaLabelRated:B,ariaLabelUnrated:E,formattedRating:R,className:$?void 0:"standalone-star",onClick:t,rateLabel:W})}})]})]})]})},A=l.default.div.withConfig({componentId:"sc-ac229a98-0"})(["width:4.5rem;"]),L=l.default.div.withConfig({componentId:"sc-ac229a98-1"})(["display:flex;"," margin-bottom:",";margin-top:",";max-width:100%;padding-left:",";padding-right:",";","{padding-left:0;padding-right:0;margin-top:0;}&.base{","}&.baseAlt{","}"],(0,p.setTypographyType)("bodySmall"),p.spacing.s,p.spacing.xxs,p.spacing.s,p.spacing.s,p.mediaQueries.breakpoints.above.m,(0,p.setPropertyToColorVar)("color","ipt-on-base-textSecondary-color"),(0,p.setPropertyToColorVar)("color","ipt-on-baseAlt-textSecondary-color")),k=l.default.div.withConfig({componentId:"sc-ac229a98-2"})(["display:flex;flex-direction:column;padding-left:",";overflow:hidden;"],p.spacing.s),S=(0,l.default)(d.Title).withConfig({componentId:"sc-ac229a98-3"})(["margin-bottom:",";padding:0;"," .prompt-title-text{max-height:7.4rem;}"],p.spacing.xxs,e=>(0,l.css)(["",""],e.typographyType)),O=l.default.div.withConfig({componentId:"sc-ac229a98-4"})([""," .standalone-star{padding:0;min-width:0;}"],(0,p.setTypographyType)("body")),M=(0,l.default)(d.RateButton).withConfig({componentId:"sc-ac229a98-5"})(["height:fit-content;"]);var $=a(15632),N=a(37452);let B=n()`
+    fragment BaseTitlePrompt__Track on Title {
+        id
+        experimental_trackNotificationPreferences @include(if: $isProPage) {
+            ...TrackPreferences
+        }
+    }
+    ${N.vW}
+`,E=e=>{let{data:t}=e;return t?(0,i.jsx)(W,{id:t.id,data:t.experimental_trackNotificationPreferences,displayTrackOptionsMenu:!1,buttonProps:{width:"full-width"},buttonType:"secondaryButton"}):null},W=(0,l.default)($.e).withConfig({componentId:"sc-3d776b07-0"})(["width:100%;"]),z=n()`
+    fragment BaseTitlePrompt__Trailer on Title {
+        id
+        latestTrailer @skip(if: $isProPage) {
+            id
+        }
+    }
+`,D=e=>{let{data:t}=e,a=(0,s.Z)(),{videoSingleLinkBuilder:r}=(0,I.WO)(),n=t?.latestTrailer?.id,o=n?r({viconst:n,refSuffix:w.Cd.TRAILER}):void 0;return o?(0,i.jsx)(d.SecondaryButton,{width:"full-width",preIcon:"play-arrow",href:o,"data-testid":T.z7.TRAILER,children:a.formatMessage(T.TY.trailer)}):null};var U=a(58605),Y=a(33444);let F=e=>{let{titleId:t}=e,{value:a}=(0,w.Lz)(),r={...(0,U.y)(),refTag:a};return t?(0,i.jsx)(Y.f,{titleId:t,watchlistMetricsContext:r}):null};var G=a(83128),V=a(40288);let Q=e=>{let{titleId:t,category:a,watchOptions:r,refMarker:n}=e,o=a.toUpperCase().replace("IMDB","IMDb"),s=(0,G.Ok)().adSlotsInfo;return(0,i.jsxs)(K,{children:[(0,i.jsx)(X,{children:o}),(0,i.jsx)(d.List,{children:t&&r.map(e=>{let r=(0,V.i)(t,e,n,s),o="shw"===e.provider.refTagFragment?e.title.value:e.provider.name.value,l=e.provider?.logos?.icon;return(0,i.jsx)(J,{...r,children:(0,i.jsxs)(ee,{children:[l?.url&&l?.width&&l?.height&&(0,i.jsx)(et,{imageModel:{caption:o,url:l.url,maxWidth:l.width,maxHeight:l.height},size:50}),(0,i.jsxs)(ea,{children:[(0,i.jsx)(ei,{children:o}),(0,i.jsx)(er,{children:e.description?.value})]})]})},`${a}-${e.link}`)})})]})},Z=e=>{let{titleId:t,watchOptionsCategories:a,isLoading:r,refMarker:n}=e,o=(0,s.Z)();return r?(0,i.jsx)(q,{"data-testid":"loader-container",children:(0,i.jsx)(d.Loader,{})}):a&&0!==a.length?(0,i.jsx)(i.Fragment,{children:a.map(e=>(0,i.jsx)(Q,{titleId:t,category:e.categoryName.value,watchOptions:e.watchOptions,refMarker:n},e.categoryName.value))}):(0,i.jsx)(en,{title:o.formatMessage({id:"error_emptyStates_watchOptions_title",defaultMessage:"Watch Options are currently unavailable"}),message:o.formatMessage({id:"error_common_refreshOrTryAgain",defaultMessage:"Please refresh the page or try again later."})})},H=n()`
+    fragment WatchOptionCategories on CategorizedWatchOptions {
+        categoryName {
+            value
+            language
+        }
+        watchOptions {
+            title {
+                value
+                language
+            }
+            link(platform: WEB)
+            shortTitle {
+                value
+                language
+            }
+            description {
+                value
+                language
+            }
+            provider {
+                name {
+                    value
+                    language
+                }
+                logos {
+                    icon {
+                        url
+                        height
+                        width
+                    }
+                }
+                refTagFragment
+            }
+        }
+    }
+`;Z.fragments={watchOptionsCategories:H};let q=l.default.div.withConfig({componentId:"sc-b2d8b824-0"})(["align-items:flex-start;display:flex;height:100%;margin:3rem 0;justify-content:center;"]),K=l.default.div.withConfig({componentId:"sc-b2d8b824-1"})(["",""],(0,p.setTypographyType)("body")),X=l.default.div.withConfig({componentId:"sc-b2d8b824-2"})([""," "," text-transform:none;font-size:13px;margin:0;padding:13px 0 7px 15px;","{padding:13px 0 7px;}"],(0,p.setTypographyType)("overline"),(0,p.setPropertyToColorVar)("color","ipt-on-baseAlt-accent1-color"),p.mediaQueries.breakpoints.above.m),J=(0,l.default)(d.ListItem).withConfig({componentId:"sc-b2d8b824-3"})(["&:first-of-type{border-top:1px solid rgba(",",0.1);}border-bottom:1px solid rgba(",",0.1);height:4rem;","{padding:0;}"],(0,p.getColorVarValue)("ipt-base-rgb"),(0,p.getColorVarValue)("ipt-base-rgb"),p.mediaQueries.breakpoints.above.m),ee=l.default.div.withConfig({componentId:"sc-b2d8b824-4"})(["display:flex;"]),et=(0,l.default)(d.PhotoImage).withConfig({componentId:"sc-b2d8b824-5"})(["min-width:","px;margin-top:auto;margin-bottom:auto;margin-right:0.5rem;border-radius:0.25rem;"],50),ea=l.default.div.withConfig({componentId:"sc-b2d8b824-6"})(["margin-top:auto;margin-bottom:auto;"]),ei=l.default.div.withConfig({componentId:"sc-b2d8b824-7"})(["",""],(0,p.setTypographyType)("subtitle")),er=l.default.div.withConfig({componentId:"sc-b2d8b824-8"})([""," "," ","{max-width:260px;}"],(0,p.setPropertyToColorVar)("color","ipt-on-baseAlt-textHint-color"),(0,p.setTypographyType)("bodySmall"),p.mediaQueries.breakpoints.above.m),en=(0,l.default)(h.G).withConfig({componentId:"sc-b2d8b824-9"})([""," background:initial;"],(0,p.setTypographyType)("body")),eo=n()`
+    fragment BaseTitlePrompt__WatchOptions on Title {
+        id
+        watchOptionsByCategory(location: $location) @skip(if: $isProPage) {
+            categorizedWatchOptionsList {
+                ...WatchOptionCategories
+            }
+        }
+    }
+    ${H}
+`,es=e=>{let{data:t}=e,{value:a}=(0,w.Lz)();if(!t)return null;let r=t.watchOptionsByCategory?.categorizedWatchOptionsList,n=r&&r.length>0;return(0,i.jsx)(i.Fragment,{children:n&&(0,i.jsx)(Z,{titleId:t.id,watchOptionsCategories:r,refMarker:{prefix:a}})})},el=n()`
+    fragment BaseTitlePromptShared on Title {
+        id
+        plot {
+            plotText {
+                plainText
+            }
+        }
+        productionStatus {
+            currentProductionStage {
+                id
+                text
+            }
+        }
+        ...BaseTitlePrompt__Track
+        ...BaseTitlePrompt__Trailer
+        ...BaseTitlePrompt__WatchOptions
+    }
+    ${z}
+    ${eo}
+    ${B}
+`,ed=n()`
+    query Base_Title_Prompt(
+        $id: ID!
+        $location: WatchOptionsLocation
+        $isProPage: Boolean!
+    ) {
+        title(id: $id) {
+            ...BaseTitlePromptShared
+        }
+    }
+    ${el}
+`,ep=e=>{let{titleId:t,pause:a=!1,queryOverride:i}=e,r=(0,m.ic)(),n=(0,c.ik)(),[o,s]=(0,g.E)({query:ed,variables:{id:t,location:r,isProPage:n},context:{serverSideCacheable:!1,personalized:n},pause:a,...i});return[o,s]},ec=e=>{let{title:t,baseTitlePromptData:a,onClose:r,isOpen:n,queryOverride:o,contentOverride:l,actionOverride:p}=e,g=(0,s.Z)(),m=(0,c.ik)(),[u,b]=ep({titleId:t?.id||"",pause:!!a||!t||!n,queryOverride:o});if(!t||!t.titleText?.text)return null;let y=a??u.data?.title,_=u.fetching,v=u.error,I=y?.productionStatus?.currentProductionStage.id,w=y?.productionStatus?.currentProductionStage.text,P=I&&w&&I!==T.gA;return(0,i.jsx)(eh,{onCloseClicked:r,baseColor:m?"base":"baseAlt",isOpen:n,closePromptLabel:g.formatMessage(T.TY.closePrompt),children:(0,i.jsxs)(eg,{children:[(0,i.jsx)(R,{titleData:t}),_&&(0,i.jsx)(f.lI,{height:"feature"}),!_&&(0,i.jsxs)(i.Fragment,{children:[y?.plot?.plotText?.plainText&&(0,i.jsx)(eu,{children:y.plot.plotText.plainText}),P&&(0,i.jsx)(ef,{"data-testid":T.z7.PRODUCTION_STATUS,children:w}),l&&l(u?.data||{}),(0,i.jsxs)(em,{children:[!p&&!m&&y&&(0,i.jsx)(D,{data:y}),m&&(0,i.jsx)(x.a,{title:t}),!m&&(0,i.jsx)(F,{titleId:t.id}),m&&y&&(0,i.jsx)(E,{data:y}),p&&p(u?.data||{})]}),!m&&y&&(0,i.jsx)(es,{data:y})]}),!_&&v&&(0,i.jsx)(h.G,{title:g.formatMessage({id:"error_common_sorryTryAgain",defaultMessage:"Sorry, there was an error. Please try again."}),displayType:"compact",action:(0,i.jsx)(d.TextLink,{onClick:()=>b(),text:g.formatMessage({id:"common_buttons_retry",defaultMessage:"Try again"}),"data-testid":T.z7.RETRY})})]})})},eg=l.default.div.withConfig({componentId:"sc-3318d8db-0"})(["padding-bottom:",";"],p.spacing.l),em=l.default.div.withConfig({componentId:"sc-3318d8db-1"})(["display:flex;margin-bottom:",";padding-left:",";padding-right:",";","{padding-left:0;padding-right:0;}& > :nth-child(1):not(:last-child){margin-right:",";}"],p.spacing.xs,p.spacing.s,p.spacing.s,p.mediaQueries.breakpoints.above.m,p.spacing.xs),eu=l.default.div.withConfig({componentId:"sc-3318d8db-2"})([""," margin-bottom:",";padding-left:",";padding-right:",";","{padding-left:0;padding-right:0;}"],(0,u.S)(4),p.spacing.s,p.spacing.s,p.spacing.s,p.mediaQueries.breakpoints.above.m),eh=(0,l.default)(d.Prompt).withConfig({componentId:"sc-3318d8db-3"})(["",""],(0,p.setTypographyType)("bodySmall")),ef=l.default.div.withConfig({componentId:"sc-3318d8db-4"})(["margin:",";","{margin-left:0;margin-right:0;}"],p.spacing.s,p.mediaQueries.breakpoints.above.m)},49096:function(e,t,a){a.d(t,{a:function(){return p}});var i=a(52322),r=a(2784),n=a(79855),o=a(45103),s=a(72147),l=a(82542),d=a(64101);let p=e=>{let{title:t}=e,a=(0,n.Z)(),p=(0,d.K)({originalTitleText:t?.originalTitleText,titleText:t?.titleText}),[c,g]=(0,r.useState)(!1);return t&&p?(0,i.jsxs)(i.Fragment,{children:[(0,i.jsx)(o.SecondaryButton,{width:"full-width",preIcon:"playlist-add-check","data-testid":l.z7.ADD_TO_LIST,onSelect:()=>g(!0),children:a.formatMessage(l.TY.addToList)}),(0,i.jsx)(s.Z,{constId:t.id,primaryImage:t.primaryImage,primaryText:p,imageType:"name",isOpen:c,onClose:()=>{g(!1)}})]}):null}},40288:function(e,t,a){a.d(t,{i:function(){return f}});var i=a(27261),r=a(25291),n=a.n(r),o=a(12859),s=a(87010);let l=(e,t)=>{let a;if(!t||(window.ad_utils&&(a=window.ad_utils.responsiveAdAPI.getLastAdResponse()),null===a))return Promise.resolve();let i=d(e),r=d(a);if(!p(i,r))return Promise.resolve();let n=r.clickTrackers;return Array.isArray(n)?c(n):Promise.resolve()},d=(e,t)=>{let a=e&&e.slots?e.slots[o.A.PROMOTED_WATCH_BAR]:null;if((0,s.M2)(a)||!(a&&a.slotMarkup))return null;let i=a.slotMarkup;try{return JSON.parse(i)}catch(e){return t&&t("There was an error decoding PWB ad response",e),null}},p=(e,t)=>!!e&&!!t&&e.providerId===t.providerId,c=e=>{let t=[];return e.forEach(e=>{t.push(m(e).catch(t=>console.error("Error when trying to fire tracker : "+e,t)))}),Promise.all(t)};n()(function(e,t){return g(e,t)});let g=(e,t)=>{let a=d(e),i=d(t);if(!p(a,i))return Promise.resolve();let r=i.impressionTrackers;return Array.isArray(r)?c(r):Promise.resolve()},m=e=>new Promise((t,a)=>{let i=new Image;i.addEventListener("load",()=>t(i)),i.addEventListener("error",e=>a(e)),i.src=e}),u=/[^a-zA-Z0-9]/g,h=(e,t,a,r,n)=>()=>{let o=r.provider?.refTagFragment?.replace(u,"").substr(0,12),s=`watch-${e}-${o}`;(0,i.c$)(t,s,a),r.promoted&&n&&l(n,r.promoted)},f=(e,t,a,r)=>{let n=a?.prefix?`${a.prefix}_`:"",o=a?.suffix?`_${a.suffix}`:"",s=a?.id?a.id:"",l=t.provider?.refTagFragment?`${n}${t.provider.refTagFragment}${o}`:"",d=t.provider?.refTagFragment?`${n}${t.provider.refTagFragment}`:"",p=t.link.startsWith("/"),c=-1!==t.link.indexOf("imdb.com"),g=!p&&!c;return{href:(0,i.jo)(t.link,d),onClick:h(e,l,s,t,r),postIcon:g?"launch":void 0,postIconName:g?"launch":void 0,target:"_blank"}}}}]);
