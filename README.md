@@ -1,21 +1,20 @@
 📱 User Side Screens
 Login
-![image](https://github.com/user-attachments/assets/50202ce4-5f5b-4498-b8bb-d5a6845f2f01)
-
-
+![image](https://github.com/user-attachments/assets/f45ce70e-3ab4-4adc-9cc3-ed02d3f5c905)
 
 Register
-//mig
+![image](https://github.com/user-attachments/assets/7bfb6225-da26-4631-bad9-20895ee496f6)
 
 Home Page
-//Displays available medicines with options to add to cart or view details.
+![image](https://github.com/user-attachments/assets/f3224039-5a95-4880-b1c4-a0af6bec6716)
 
-Cart
-//mig
+Filter page
+![image](https://github.com/user-attachments/assets/7e892820-cc00-4ba5-a383-c744fe563acb)
 
-Checkout
-//User fills address and payment details to complete the order.
+Downloaded page
+![image](https://github.com/user-attachments/assets/daf38541-3a89-4e7a-b57f-f25c67ad598a)
 
-Order History
-//User sees previous orders and their statuses.
+movie trailers & download page 
+![image](https://github.com/user-attachments/assets/3ea6f1a6-7d38-4d28-ae07-6231576287f1)
+
 
