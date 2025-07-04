@@ -30,7 +30,7 @@ public class MovieController {
     }
 
         @GetMapping("/id/{id}")
-    public Movies getmovie(@PathVariable("id") int id) {
+    public Movies getmovie(@PathVariable("id") String id) {
         Optional<Movies> movie = moviesRepo.findById(id);
         if (movie.isPresent()) {
             return movie.get();
@@ -52,21 +52,18 @@ public class MovieController {
                     .filter(movie -> movie.getLanguage() != null && movie.getLanguage().equalsIgnoreCase(language))
                     .collect(Collectors.toList());
         }
-
         if (genre != null && !genre.isEmpty()) {
             movies = movies.stream()
                     .filter(movie -> movie.getGenre() != null && movie.getGenre().equalsIgnoreCase(genre))
                     .collect(Collectors.toList());
         }
-
         if (rating != null) {
             BigDecimal ratingValue = BigDecimal.valueOf(rating);
             movies = movies.stream()
                     .filter(movie -> movie.getRating() != null && movie.getRating().compareTo(ratingValue) >= 0)
                     .collect(Collectors.toList());
         }
-
-        return movies; // Return filtered list (empty if no matches)
+        return movies;
     }
 
 
@@ -77,13 +74,10 @@ public class MovieController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<String> updateMovie(@PathVariable("id") int id, @RequestBody Movies updatedMovie) {
+    public ResponseEntity<String> updateMovie(@PathVariable("id") String id, @RequestBody Movies updatedMovie) {
         Optional<Movies> existingMovie = moviesRepo.findById(id);
-
         if (existingMovie.isPresent()) {
             Movies movie = existingMovie.get();
-
-            // Update fields
             movie.setTitle(updatedMovie.getTitle());
             movie.setDescription(updatedMovie.getDescription());
             movie.setGenre(updatedMovie.getGenre());
@@ -94,17 +88,14 @@ public class MovieController {
             movie.setTrailer_url(updatedMovie.getTrailer_url());
             movie.setBox_office(updatedMovie.getBox_office());
             movie.setActors(updatedMovie.getActors());
-
             moviesRepo.save(movie);
             return new ResponseEntity<>("Movie updated successfully!", HttpStatus.OK);
         } else {
             return new ResponseEntity<>("Movie not found! ID: " + id, HttpStatus.NOT_FOUND);
         }
     }
-
-
     @DeleteMapping("/{id}")
-    public ResponseEntity<?> delectmovie(@PathVariable("id") int id){
+    public ResponseEntity<?> delectmovie(@PathVariable("id") String id){
         Optional<Movies> jobs = moviesRepo.findById(id);
         if(jobs.isPresent()) {
             moviesRepo.deleteById(id);
@@ -114,21 +105,15 @@ public class MovieController {
             throw new RuntimeException("job not found! ID:"+id);
         }
     }
-
-
     @PutMapping("/upload-image/{id}")
-    public ResponseEntity<String> uploadImageFromUrl(@PathVariable int id, @RequestParam("imageUrl") String imageUrl) {
+    public ResponseEntity<String> uploadImageFromUrl(@PathVariable String id, @RequestParam("imageUrl") String imageUrl) {
         try {
-            // Upload image from URL to Cloudinary
             Map uploadResult = cloudinary.uploader().upload(imageUrl, ObjectUtils.emptyMap());
             String cloudinaryUrl = (String) uploadResult.get("secure_url");
-
-            // Save the Cloudinary URL in the database
             Movies movie = moviesRepo.findById(id)
                     .orElseThrow(() -> new RuntimeException("Movie not found!"));
             movie.setPoster_url(cloudinaryUrl);
             moviesRepo.save(movie);
-
             return ResponseEntity.ok("Image uploaded successfully! Cloudinary URL: " + cloudinaryUrl);
         } catch (Exception e) {
             return ResponseEntity.status(500).body("Failed to upload image: " + e.getMessage());
@@ -136,7 +121,7 @@ public class MovieController {
     }
 
     @GetMapping("/image/{id}")
-    public ResponseEntity<String> getMovieImage(@PathVariable int id) {
+    public ResponseEntity<String> getMovieImage(@PathVariable String id) {
         Optional<Movies> movie = moviesRepo.findById(id);
         if (movie.isPresent() && movie.get().getPoster_url() != null) {
             System.out.println("Image URL: " + movie.get().getPoster_url()); // Log URL
@@ -145,7 +130,4 @@ public class MovieController {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Image not found");
         }
     }
-
-
-
 }
